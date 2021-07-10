@@ -1,0 +1,565 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessObject
+{
+    public class BO_Finance
+    {
+        public string VOUCHER_NO;
+        public string NARRATION1;
+        public string NARRATION2;
+        public string PAYMENT_RECEIPT;
+        public string TYPEOFINSTRUMENT;
+        public string INSTRUMENTNO;
+        public DateTime? DT_ON_INS;
+        public string DAILY_SRL;
+        public DateTime? CCB_DATE;
+        public object ENTRY_FR;
+        public DateTime? AsOnDate;
+        public string CBSACNO;
+        public string REFNO;
+        public DateTime? TRANSACTIONDATE;
+        public string RIMDETAILS;
+        public string PACSNAME;
+        public DateTime? SYSTEMDATE;
+        public string REJECTION;
+        public string STATUS;
+
+        public string AcctCode { get; set; }
+        public string Auth { get; set; }
+        public string ACTYPE { get; set; }
+        public double? SHAREAMT { get; set; }
+        public string SHARESLCODE { get; set; }
+        public object AcctCodeFormatID { get; set; }
+        public string AcctDesc { get; set; }
+        public string AcctGroupCode { get; set; }
+        public string AcctGroupDesc { get; set; }
+        public string IFSCCODE { get; set; }
+        public object AcctGroupID { get; set; }
+        public object AcctID { get; set; }
+        public string AcctType { get; set; }
+        public string BANKNAME { get; set; }
+        public string BRANCHNAME { get; set; }
+        public double? CROPAMT { get; set; }
+        public double? MISAMT { get; set; }
+        public string Category { get; set; }
+        public string ChargeCode { get; set; }
+        public object ChargeID { get; set; }
+        public string COACode { get; set; }
+        public string COADesc { get; set; }
+        public object COAID { get; set; }
+        public string DefaultValue { get; set; }
+        public string ChargeDesc { get; set; }
+        public short DisplayOrder { get; set; }
+        public string ENTRYDATE { get; set; }
+        public object Flag { get; set; }
+        public object GLAcctID { get; set; }
+        public object GLAcctCodeID { get; set; }
+        public bool IsActive { get; set; }
+        public string LookupIn { get; set; }
+        public double Transaction { get; set; }
+        public double Balance { get; set; }
+        public double collection { get; set; }
+        public string OLDAC_NO { get; set; }
+        public object ParentID { get; set; }
+        public string PostingType { get; set; }
+        public bool QtyValReq { get; set; }
+        public string QtyValUoM { get; set; }
+        public string SDataType { get; set; }
+        public object Segment1 { get; set; }
+        public object Segment2 { get; set; }
+        public object Segment3 { get; set; }
+        public object Segment4 { get; set; }
+        public object Segment5 { get; set; }
+        public object Segment6 { get; set; }
+        public string SegmentDesc { get; set; }
+        public short SLength { get; set; }
+        public object TaxChargesGroupID { get; set; }
+        public string TaxRegionCode { get; set; }
+        public string TaxRegionDesc { get; set; }
+        public object TaxRegionID { get; set; }
+        public long TransUserID { get; set; }
+        public string ChargeType { get; set; }
+        public string ValueFormat { get; set; }
+        public string TaxCode { get; set; }
+        public string TaxDesc { get; set; }
+        public string TaxType { get; set; }
+        public object TaxID { get; set; }
+        public string TaxFormula { get; set; }
+        public string TCGCode { get; set; }
+        public string TCGDesc { get; set; }
+        public string TaxChargesID { get; set; }
+        public object TCGID { get; set; }
+        public string BACode { get; set; }
+        public string BAName { get; set; }
+        public string BAType { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string CountryID { get; set; }
+        public string StateID { get; set; }
+        public string City { get; set; }
+        public double? ZipCode { get; set; }
+        public string ContactPerson { get; set; }
+        public string PrimaryContact { get; set; }
+        public string AltContact { get; set; }
+        public string Fax { get; set; }
+        public string Email { get; set; }
+
+        public string LDGTRF { get; set; }
+
+        public string TR_TYPE { get; set; }
+
+        public string T_NARRATION { get; set; }
+        public string PreferredMethod { get; set; }
+        public string CurrencyID { get; set; }
+        public double? CreditLimit { get; set; }
+        public double? Prepayment { get; set; }
+
+        public double? AMT_DEBIT { get; set; }
+        public double? AMT_CREDIT { get; set; }
+        public bool IsExempted { get; set; }
+        public string PGID { get; set; }
+        public string DiscGID { get; set; }
+        public object BAID { get; set; }
+        public long UserID { get; set; }
+        public object UserCode { get; set; }
+        public string Name { get; set; }
+        public string UserName { get; set; }
+        public string FName { get; set; }
+        public string MName { get; set; }
+        public string LName { get; set; }
+        public string GuardianName { get; set; }
+        public string Guardian { get; set; }
+        public string SurName { get; set; }
+        public string MidName { get; set; }
+        public string POCode { get; set; }
+        public string PSCode { get; set; }
+        public string BLKCode { get; set; }
+        public string DISCode { get; set; }
+        public string CLStatus { get; set; }
+        public string Nominee { get; set; }
+        public string Sex { get; set; }
+        public string RELCode { get; set; }
+        public string PROFCode { get; set; }
+        public DateTime? DTSCust { get; set; }
+        public string MemNo { get; set; }
+        public string VillCode { get; set; }
+        public string CatCode { get; set; }
+        public string SpCatCode { get; set; }
+        public string TelNo { get; set; }
+        public string LandHolding { get; set; }
+        public double LandHolding1 { get; set; }
+        public string AcStatus { get; set; }
+        public DateTime? EntryDate { get; set; }
+        public string TrailTOT { get; set; }
+        public string TerminalID { get; set; }
+        public string EmpCode { get; set; }
+        public string PictPath { get; set; }
+        public string SignPath { get; set; }
+        public string GPCode { get; set; }
+        public string SUCode { get; set; }
+        public string EduCode { get; set; }
+        public string PANCardNo { get; set; }
+        public string RationCardNo { get; set; }
+        public string VotarCardNo { get; set; }
+        public string PassportNo { get; set; }
+        public string ClientType { get; set; }
+        public string BPLNo { get; set; }
+        public double? MonthlyIncome { get; set; }
+        public DateTime? DOB { get; set; }
+
+        public DateTime? FROMDT { get; set; }
+        public string PINCode { get; set; }
+        public string LandType { get; set; }
+        public DateTime? CloseDT { get; set; }
+        public DateTime? ValidTill { get; set; }
+        public string Cause { get; set; }
+
+        public string INTPAIDLDG_CODE { get; set; }
+        public string ReciCER { get; set; }
+        public string SchCER { get; set; }
+        public string AdharNo { get; set; }
+        public string KCCCard { get; set; }
+        public string FSTName { get; set; }
+        public string LSTName { get; set; }
+        public string BranchCode { get; set; }
+        public object CUSTCode { get; set; }
+        public string GROUP_CODE { get; set; }
+        public string GROUP_NAME { get; set; }
+        public string GROUP_TYPE { get; set; }
+        public object LINK { get; set; }
+        public string FA_TYPE { get; set; }
+        public string FA_TYPE2 { get; set; }
+        public int NESTING_LEVEL { get; set; }
+        public double? GINDEX { get; set; }
+        public bool D { get; set; }
+        public bool A { get; set; }
+        public bool P { get; set; }
+        public bool OTHERS { get; set; }
+        public int AINDEX { get; set; }
+        public string EMPCODE { get; set; }
+        public string IsAdmin { get; set; }
+
+        public string TERMINAL_ID { get; set; }
+        public string PAYDIVACNO { get; set; }
+        public object LDG_CODE { get; set; }
+        public string NOMENCLATURE { get; set; }
+        public bool SL_FLAG { get; set; }
+        public bool COST_FLAG { get; set; }
+        public int LINDEX { get; set; }
+        public string TYPE { get; set; }
+        public string CASH_BANK { get; set; }
+        public double? INT_PAID { get; set; }
+        public double? ACT_OP_DR { get; set; }
+        public double? ACT_OP_CR { get; set; }
+        public double? INT_PAYBLE { get; set; }
+        public string RBI_CODE { get; set; }
+        public string ADD_WITH { get; set; }
+        public object SCHEME_CODE { get; set; }
+        public string SCHEME_NAME { get; set; }
+        public string LOAN_TERM { get; set; }
+        public bool INST_APPL { get; set; }
+        public string REPAY_MODE { get; set; }
+        public int MON_PRD { get; set; }
+        public int SHR_AMNT { get; set; }
+        public int SUB_AMNT { get; set; }
+        public int ACT_CODE { get; set; }
+        public string LOAN_TYPE { get; set; }
+        public string ODPRIN_LDG_CODE { get; set; }
+        public string ODINT_LDG_CODE { get; set; }
+        public string ODINTR_LDG_CODE { get; set; }
+        public string NPA_APP { get; set; }
+        public string OD_APP { get; set; }
+        public string SANC_APP { get; set; }
+        public string SANC_PER { get; set; }
+        public object DM_CODE { get; set; }
+        public string SCHEME { get; set; }
+        public string INT_TYPE { get; set; }
+        public string COMP_PRD { get; set; }
+        public DateTime? LAST_INTEREST_CALCULATION_DATE { get; set; }
+        public DateTime? NEXT_INTEREST_CALCULATION_DATE { get; set; }
+        public string INT_CAL_DATE_STYLE { get; set; }
+        public string SCHEME_TYPE { get; set; }
+        public double? MINBAL_CASH { get; set; }
+        public object MINBAL_CHQ { get; set; }
+        public double? MAX_TRAN_PER_MONTH { get; set; }
+        public object CHARGES_MINBAL_FALL { get; set; }
+        public object MIN_TRANPER_MONTH { get; set; }
+        public object INOPERATED_DAYS { get; set; }
+        public double? INOPERATED_MONTH { get; set; }
+        public double? INOPERATED_YR { get; set; }
+        public object UNCLAIMED_DAYS { get; set; }
+        public double? UNCLAIMED_MONTH { get; set; }
+        public double? UNCLAIMED_YR { get; set; }
+        public object AC_OPEN_AMNT { get; set; }
+        public object AC_CLOS_CHRG { get; set; }
+        public double? MIN_CASH_DEP { get; set; }
+        public bool CHEQUE_FACILITY { get; set; }
+        public double? INT_AMNT { get; set; }
+        public object MIN_DAY { get; set; }
+        public object MAX_WITH { get; set; }
+        public object MAX_WITH_MON { get; set; }
+        public object MINDAYTR { get; set; }
+        public string PHONE { get; set; }
+        public string DEPT { get; set; }
+        public string DESIG { get; set; }
+        public DateTime? DOJ { get; set; }
+        public string FNAME { get; set; }
+        public string ARSANO { get; set; }
+        public string EDU_QUF { get; set; }
+        public string ARCS { get; set; }
+        public DateTime? DATE_OF_RETIR { get; set; }
+        public DateTime? ARSADT { get; set; }
+        public DateTime? DATE_OF_BIRTH { get; set; }
+        public string REP_TO { get; set; }
+        public string M_STATUS { get; set; }
+        public string SEX { get; set; }
+        public object CUST_ID { get; set; }
+        public string UserId { get; set; }
+        public string UPassword { get; set; }
+        public string NAME { get; set; }
+        public double? ROL { get; set; }
+        public string MU { get; set; }
+        public string MCLASS { get; set; }
+        public string PUR_LDG { get; set; }
+        public string SALE_LDG { get; set; }
+        public double? TOT_QTY { get; set; }
+        public object Item_Code { get; set; }
+        public string actype { get; set; }
+        public string ac_status { get; set; }
+        public DateTime? date_of_opening { get; set; }
+        public DateTime? last_tran_date { get; set; }
+        public double? rec_int { get; set; }
+        public string old_acno { get; set; }
+
+        public string IFCCODE { get; set; }
+        public string lf_acno { get; set; }
+        public double? Pen_ROI { get; set; }
+        public string dm_code { get; set; }
+        public string operation { get; set; }
+        public string intro_acno { get; set; }
+        public string intro_name { get; set; }
+        public string intro_phone { get; set; }
+        public string intro_address { get; set; }
+        public double? deposit_amount { get; set; }
+        public Int32 depo_prd_m { get; set; }
+        public string depo_prd_d { get; set; }
+        public double? percentage { get; set; }
+        public double int_goes_to { get; set; }
+        public DateTime? date_of_maturity { get; set; }
+        public DateTime? FROMDATE { get; set; }
+        public DateTime? ENDDATE { get; set; }
+        public decimal? maturity_amt { get; set; }
+        public decimal? MATURITYAMT { get; set; }
+        public string int_type { get; set; }
+        public string category { get; set; }
+        public DateTime? last_wt_date { get; set; }
+        public DataTable dtClientMaster { get; set; }
+        public object SL_CODE { get; set; }
+        public object SB_SL_CODE { get; set; }
+        public DataTable dtAuthDetailsTable { get; set; }
+        public DataTable dtNomineeDetailsTable { get; set; }
+        public DataTable dtLedgerDetails { get; set; }
+        public string sl_Name { get; set; }
+        public DataTable dtSHGMemberDetails { get; set; }
+        public double? SOCIETY_BR_CODE { get; set; }
+        public DateTime? YEAR_START_DT { get; set; }
+        public DateTime? YEAR_END_DT { get; set; }
+        public string LISCENCEE_NAME { get; set; }
+        public string LISCENCEE_ADDRESS1 { get; set; }
+        public string LISCENCEE_ADDRESS2 { get; set; }
+        public double? STATE_CODE { get; set; }
+        public double? DIST_CODE { get; set; }
+        public double? SOCIETY_CODE { get; set; }
+        public double? Age { get; set; }
+        public string RECIPT_NO { get; set; }
+        public string CERTIFICATE_NO { get; set; }
+        public DateTime? DATE_OF_PURCHASE { get; set; }
+        public string PRD_MONTH { get; set; }
+        public string PRD_DAYS { get; set; }
+        public double? ROI { get; set; }
+        public double? DEPOSIT_AMNT { get; set; }
+        public double? MATURITY_AMNT { get; set; }
+        public DateTime? MATURITY_DATE { get; set; }
+        public string AC_NO { get; set; }
+        public string AC_STATUS { get; set; }
+        public string BANK_NAME { get; set; }
+        public string CERT_TYPE { get; set; }
+        public string INV_TYPE { get; set; }
+        public DateTime? APPL_DT { get; set; }
+        public double? LOAN_AMNT { get; set; }
+        public double? SUBSIDY { get; set; }
+        public double? NET_LOAN { get; set; }
+        public double? CASH_DISB { get; set; }
+        public double? OD_ROI { get; set; }
+        public object DURATION { get; set; }
+        public double? NO_OF_INST { get; set; }
+        public DateTime? INST_ST_DATE { get; set; }
+        public double? INST_AMOUNT { get; set; }
+        public DateTime? SANC_DATE { get; set; }
+        public DateTime? SANC_DT { get; set; }
+        public string LF_NO { get; set; }
+        public DateTime? FIRST_DISB_DT { get; set; }
+        public string P_CODE { get; set; }
+        public DateTime? LAST_REP_DT { get; set; }
+        public string ASSES { get; set; }
+        public double? APP_AMOUNT { get; set; }
+        public string ODPR { get; set; }
+        public DateTime? disb_date { get; set; }
+        public double? disb_amnt { get; set; }
+        public string INS_TYPE { get; set; }
+        public double? CASH { get; set; }
+        public double MAT { get; set; }
+        public double INS { get; set; }
+        public string TRANSFER_TO { get; set; }
+        public object INS_NO { get; set; }
+        public string HSNNO { get; set; }
+        public DateTime? JBDate { get; set; }
+        public DataTable JBEntryDetails { get; set; }
+        public string Context { get; set; }
+        public DateTime? FDate { get; set; }
+        public DateTime? TDate { get; set; }
+        public DataTable dtGroupID { get; set; }
+        public double? CGST { get; set; }
+        public double? SGST { get; set; }
+        public DataTable dtItemDetails { get; set; }
+        public string EntryType { get; set; }
+        public string TransType { get; set; }
+        public string SupCode { get; set; }
+        public string SupName { get; set; }
+        public string GSTINNo { get; set; }
+        public string IDNO { get; set; }
+        public string Comments { get; set; }
+        public string VoucherType { get; set; }
+        public DataTable dtTransDetails { get; set; }
+        public DataTable dtFASettings { get; set; }
+        public object ReportType { get; set; }
+        public object R_ID { get; set; }
+        public string PrevYear { get; set; }
+        public double? Applied_Int { get; set; }
+        public string MaturityInstruction { get; set; }
+        public string SB_ACNO { get; set; }
+        public string TakeInt { get; set; }
+        public DateTime? RenewalDate { get; set; }
+        public DateTime? RenewalAdjustmentDate { get; set; }
+        public double? RenewalPeriodsInDays { get; set; }
+        public double? RenewalPeriodsInMonth { get; set; }
+        public double? RenewalROI { get; set; }
+        public double? RenewalDepositAmt { get; set; }
+
+        public double? COMM { get; set; }
+        public double? AMOUNT { get; set; }
+        public DateTime? RenewalMaturityDate { get; set; }
+        public double? RenewalMaturityAmt { get; set; }
+        public DateTime? InterestCreditedTillDate { get; set; }
+        public double? InterestAdjusted { get; set; }
+        public double? PenalInterest { get; set; }
+        public DateTime? WithdrawlDate { get; set; }
+        public double? Maturityamount { get; set; }
+        public DateTime? CollectionDate { get; set; }
+        public string ReceivedType { get; set; }
+        public string BankLedger { get; set; }
+        public string DemandPrincipalOutstanding { get; set; }
+        public string DemandPrincipalOverdue { get; set; }
+        public string DemandPrincipalCurrent { get; set; }
+        public string DemandPenalInterest { get; set; }
+        public double? DemandOverdueInterest { get; set; }
+        public double? DemandCurrentInterest { get; set; }
+        public double? CollectionPrincipalOutstanding { get; set; }
+        public double? CollectionPrincipalOverdue { get; set; }
+        public double? CollectionPrincipalCurrent { get; set; }
+        public double? CollectionDueInterest { get; set; }
+        public double? CollectionOverdueInterest { get; set; }
+        public double? CollectionCurrentInterest { get; set; }
+        public DataTable BranchDetails { get; set; }
+        public DateTime? NewRepayDate { get; set; }
+        public double? NewROI { get; set; }
+        public double? NewODROI { get; set; }
+        public double? NewDisburseAmt { get; set; }
+        public bool NewDisbFlag { get; set; }
+
+        public double PO_CODE { get; set; }
+        public double VILL_CODE { get; set; }
+        public double TEL_NO { get; set; }
+        //public DateTime? AsAsOnDate { get; set; }
+        public double PRINCUR { get; set; }
+        public double prin_od { get; set; }
+        public double INT_CUR { get; set; }
+        public double int_od { get; set; }
+        public DateTime DATE_UPTO { get; set; }
+        public double ADV_COL { get; set; }
+        public double Prin_out { get; set; }
+        public double day_eno { get; set; }
+        public DateTime date_fr_int { get; set; }
+        public string BankBranchName { get; set; }
+        public string BankBranchAddress { get; set; }
+        public string MICR { get; set; }
+        public string IFSC { get; set; }
+        public string RegdNo { get; set; }
+        public DateTime RegdDate { get; set; }
+        public string SocietyAcno { get; set; }
+        public DateTime PassbookprintDate { get; set; }
+        public double CSPAcno { get; set; }
+        public double CommLedger { get; set; }
+        public double DebitAmount { get; set; }
+        public double CreditAmount { get; set; }
+        public DateTime VoucherDate { get; set; }
+        public DateTime PrevVoucherDate { get; set; }
+        public double CCBCode { get; set; }
+        public Int32 SuspenseLdg { get; set; }
+        public Int32 BranchID { get; set; }
+        public DateTime login_date { get; set; }
+        public string userri { get; set; }
+
+        public decimal rs2000 { get; set; }
+        public decimal rs500 { get; set; }
+        public decimal rs200 { get; set; }
+        public decimal rs100 { get; set; }
+        public decimal rs50 { get; set; }
+        public decimal rs20 { get; set; }
+        public decimal rs10 { get; set; }
+        public decimal rs5 { get; set; }
+        public decimal rs2 { get; set; }
+        public decimal rs1 { get; set; }
+        public Double DenomTotalAmount { get; set; }
+        public string DENO_TYPE { get; set; }
+        public Decimal RPU { get; set; }
+        public decimal TOT_AMT { get; set; }
+        public string BATCH_NO { get; set; }
+        public decimal CGST_AMT { get; set; }
+        public decimal SGST_AMT { get; set; }
+        public string CATEGORY_NAME { get; set; }
+        public Int64 ITEMCATEGORY_ID { get; set; }
+        public DateTime ASON { get; set; }
+        public decimal PurchaseValue { get; set; }
+        public decimal Stock_Rate { get; set; }
+        public decimal Stock_Value { get; set; }
+        public double Sale_to { get; set; }
+
+        //LOAN SECURITY DETAILS
+
+
+        public string LOAN_SEC_ID { get; set; }
+
+        public string SUB_TYPE { get; set; }
+        public string MUJA_NO { get; set; }
+        public decimal VALUE_OF_LAND { get; set; }
+        public string GL_NO { get; set; }
+        public string KH_NO { get; set; }
+        public string PLOT_NO { get; set; }
+        public string LAND_TYPE { get; set; }
+        public decimal TOTAL_LAND { get; set; }
+        public string CERT_NO { get; set; }
+        public DateTime ISS_DT { get; set; }
+        public string ISS_OFF { get; set; }
+        public decimal FACE_VAL { get; set; }
+        public decimal MAT_VAL { get; set; }
+        public DateTime MAT_DT { get; set; }
+
+        public decimal RD_ACC_NO { get; set; }
+        public decimal MIS_ACC_NO { get; set; }
+        public decimal DC_ACC_NO { get; set; }
+        public decimal FD_ACC_NO { get; set; }
+        public decimal DAILY_ACC_NO { get; set; }
+
+        public string OTH_SEC { get; set; }
+        public DateTime PLEDG_DATE { get; set; }
+        public string REMARKS { get; set; }
+        public string POL_NO { get; set; }
+        public string SUM_ASSU { get; set; }
+        public decimal SUM_VALUE { get; set; }
+        public DateTime ASSINEE_DATE { get; set; }
+        public string PERTI { get; set; }
+        public string VEH_NO { get; set; }
+
+        public string MODEL_NO { get; set; }
+        public string CHASE_NO { get; set; }
+        public decimal VALUE_OF_HYP { get; set; }
+        public decimal K_NO { get; set; }
+        public DateTime K_DATE { get; set; }
+        public DateTime K_UPTO { get; set; }
+        public string K_ACRE { get; set; }
+        public decimal SAN_VALUE { get; set; }
+        public decimal K_VALUE { get; set; }
+        public DateTime K_VALID { get; set; }
+        public decimal CREDIT_LIMIT_VALUE { get; set; }
+        public string K_SEES { get; set; }
+        public DateTime REP_DATE { get; set; }
+        public DateTime LIEN_DATE { get; set; }
+        public decimal DEP_AMT { get; set; }
+        public string DAG_NO { get; set; }
+        public string Sec_Type { get; set; }
+
+
+        public DateTime Cash_In_Hand_Date { get; set; }
+        public DateTime Deposite_Balance_Date { get; set; }
+        public DateTime General_Ledger_Date { get; set; }
+        public DateTime Final_Account_Date { get; set; }
+        public DateTime Loan_Account_Date { get; set; }
+
+    }
+}

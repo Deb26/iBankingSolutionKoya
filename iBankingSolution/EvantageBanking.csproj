@@ -1,0 +1,1924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{768376B9-9128-4CE1-9EA2-C342169EFE3C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iBankingSolution</RootNamespace>
+    <AssemblyName>iBankingSolution</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\iProjectBMSolutions12022019\iProjectBMSolutions\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BusinessObject">
+      <HintPath>..\BusinessObject\bin\Debug\BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.v12.12.0.0.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\newdtpicker.css" />
+    <Content Include="Content\css\Passbook.css" />
+    <Content Include="Content\images\edit.png" />
+    <Content Include="Content\images\global Logo.jpg" />
+    <Content Include="Content\images\refresh.png" />
+    <Content Include="Content\js\newdtpicker.js" />
+    <Content Include="ExportDownloadPage\ExportToAccountStatementReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToCashAccountReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToCashBookReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToClientListReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToDayBookReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToGeneralLedgerReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToloanActDetailsReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToLoanDetailListReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToOutStandingNPAList.aspx" />
+    <Content Include="ExportDownloadPage\ExportToTrialBalanceReport.aspx" />
+    <Content Include="Images\AddRow.png" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\Empty_DP.jpg" />
+    <Content Include="Images\images.jpg" />
+    <Content Include="Images\Logo2.jpg" />
+    <Content Include="Images\LogoutPage.png" />
+    <Content Include="Images\logo_sigclub.png" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\noImage.jpg" />
+    <Content Include="Images\No_Person.jpg" />
+    <Content Include="Images\No_Signature.jpg" />
+    <Content Include="Images\No_Signatures.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\tt_spinner.gif" />
+    <Content Include="Images\Wait.gif" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Master\balUpdate.aspx" />
+    <Content Include="Master\circle.gif" />
+    <Content Include="Master\frmACGroupMasterList.aspx" />
+    <Content Include="Master\frmDateConfiguration.aspx" />
+    <Content Include="Master\frmDepositMaster.aspx" />
+    <Content Include="Master\frmDepositMasterList.aspx" />
+    <Content Include="Master\frmEmployeeMaster.aspx" />
+    <Content Include="Master\frmEmployeeMasterList.aspx" />
+    <Content Include="Master\FrmItemClass.aspx" />
+    <Content Include="Master\frmItemClassList.aspx" />
+    <Content Include="Master\FrmItemMaster.aspx" />
+    <Content Include="Master\frmItemMasterList.aspx" />
+    <Content Include="Master\frmKYCList.aspx" />
+    <Content Include="Master\frmLedgerList.aspx" />
+    <Content Include="Master\frmLoanSchemeMaster.aspx" />
+    <Content Include="Master\frmLoanSchemeMasterList.aspx" />
+    <Content Include="Master\frmLoanUpdateBalance.aspx" />
+    <Content Include="Master\frmMasterAcGroup.aspx" />
+    <Content Include="Master\frmMasterKYC.aspx" />
+    <Content Include="Master\frmMasterLedger.aspx" />
+    <Content Include="Master\frmMasterSHGClient.aspx" />
+    <Content Include="Master\frmMasterSocietySetup.aspx" />
+    <Content Include="Master\frmOpeningBalanceUp.aspx" />
+    <Content Include="Master\frmpractice.aspx" />
+    <Content Include="Master\frmProjectUser.aspx" />
+    <Content Include="Master\frmProjectUserList.aspx" />
+    <Content Include="Master\FrmSearchCustomer.aspx" />
+    <Content Include="Master\frmSHGList.aspx" />
+    <Content Include="Master\frmStock_Update.aspx" />
+    <Content Include="Master\frmSubledgerList.aspx" />
+    <Content Include="Master\frmSubledgerMaster.aspx" />
+    <Content Include="Master\frmSupplierMaster.aspx" />
+    <Content Include="Master\mastermodifytransaction.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="MasterPages\ProjectBM.Master" />
+    <Content Include="Report\CrystalReports\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="pacsbankingDataSet.xsc">
+      <DependentUpon>pacsbankingDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="MyDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MyDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Report\frmBRSReport.aspx" />
+    <Content Include="Report\frmCashBookRepost.aspx" />
+    <Content Include="Report\frmDailySaleReport.aspx" />
+    <Content Include="Report\frmDailyScroll.aspx" />
+    <Content Include="Report\frmDepositReturn.aspx" />
+    <Content Include="Report\frmDepositRtn.aspx" />
+    <Content Include="Report\frmGSTCalculation.aspx" />
+    <Content Include="Report\frmInvestmentDetailsDepositReport.aspx" />
+    <Content Include="Report\frmItemWiseSalePurchaseReport.aspx" />
+    <Content Include="Report\frmLoanCollectionByScheme.aspx" />
+    <Content Include="Report\frmLoanSecKarba.aspx" />
+    <Content Include="Report\frmLoanSecKVPNSC.aspx" />
+    <Content Include="Report\frmLoanSecurityDetlReport.aspx" />
+    <Content Include="Report\frmMisDepositReturn.aspx" />
+    <Content Include="Report\frmNPAFarm.aspx" />
+    <Content Include="Report\frmNPANonFarm.aspx" />
+    <Content Include="Report\frmSalesJournalReport.aspx" />
+    <Content Include="Report\frmStockDetailsReport.aspx" />
+    <Content Include="Report\frmSubledgerDetailsReport.aspx" />
+    <Content Include="Report\frmVoucherSummary.aspx" />
+    <Content Include="Report\frm_DailyScroll_ASON.aspx" />
+    <Content Include="Report\GSTPayableReceiable.aspx" />
+    <Content Include="Report\LoanSchemeWisedisburse.aspx" />
+    <Content Include="Report\StockMemoDetailsReport.aspx" />
+    <Content Include="Transaction\frmBankLedgerBalanceUpdate.aspx" />
+    <Content Include="Transaction\frmBatchTransaction.aspx" />
+    <Content Include="Transaction\frmCreditLimitConfiguration.aspx" />
+    <Content Include="Transaction\frmDeleteRepayment.aspx" />
+    <Content Include="Transaction\frmDetailListShare.aspx" />
+    <Content Include="Transaction\frmInvestmentAccountClosing.aspx" />
+    <Content Include="Transaction\frmLoanAcOpening.aspx" />
+    <Content Include="Transaction\frmLoanEMI.aspx" />
+    <Content Include="Transaction\frmLoanSecurityEntry.aspx" />
+    <Content Include="Transaction\frmMISINTDetails.aspx" />
+    <Content Include="Transaction\frmNeftRtgs.aspx" />
+    <Content Include="Transaction\frmNEFTRTGSNEXT.aspx" />
+    <Content Include="Transaction\frmPassBook.aspx" />
+    <Content Include="Transaction\frmSalesPurchase.aspx" />
+    <Content Include="Transaction\frmSavingsInterestCalculation.aspx" />
+    <Content Include="Transaction\frmShareAccountClosing.aspx" />
+    <Content Include="Transaction\frmShareAccountOpening.aspx" />
+    <Content Include="Transaction\frmShareAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmShareDividendCalculation.aspx" />
+    <Content Include="Transaction\frmTextFileUpload.aspx" />
+    <Content Include="Transaction\frmVoucherAuthorization.aspx" />
+    <Content Include="Transaction\frmVoucherModification.aspx" />
+    <Content Include="Transaction\PassBook.aspx" />
+    <Content Include="WebForm.aspx" />
+    <Content Include="BatchTransFormat.xlsx" />
+    <None Include="pacsbankingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pacsbankingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="pacsbankingDataSet.xss">
+      <DependentUpon>pacsbankingDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\bankingpublish.pubxml" />
+    <None Include="Report\CrystalReports\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\CrystalReports\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Report\CrystalReports\LoanDataset.xsc">
+      <DependentUpon>LoanDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\CrystalReports\LoanDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoanDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\CrystalReports\LoanDataset.xss">
+      <DependentUpon>LoanDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\css\bootstrap-multiselect.css" />
+    <Content Include="Content\css\BootstrapPopup.css" />
+    <Content Include="Content\css\dataTables.bootstrap.css" />
+    <Content Include="Content\css\dataTables.responsive.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery-ui1.12.1.css" />
+    <Content Include="Content\css\metisMenu.min.css" />
+    <Content Include="Content\css\prettify.css" />
+    <Content Include="Content\css\sb-admin-2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\css\StyleSheet.css" />
+    <Content Include="Content\DDLScript\bootstrap.min.css" />
+    <Content Include="Content\DDLScript\select2.full.min.js" />
+    <Content Include="Content\DDLScript\_all-skins.min.css" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\AddRow.png" />
+    <Content Include="Content\images\delete.png" />
+    <Content Include="Content\images\LoginImg1.jpg" />
+    <Content Include="Content\images\LoginImg2.jpg" />
+    <Content Include="Content\images\LoginImg4.jpg" />
+    <Content Include="Content\images\Logo.jpg" />
+    <Content Include="Content\images\main-bg.png" />
+    <Content Include="Content\images\male-avatar-icon.png" />
+    <Content Include="Content\images\NOImage.png" />
+    <Content Include="Content\images\remove.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\js\background.cycle.js" />
+    <Content Include="Content\js\bootstrap-confirmation.min.js" />
+    <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\js\bootstrap-multiselect.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\bootstrap3-typeahead.min.js" />
+    <Content Include="Content\js\Chart.bundle.js" />
+    <Content Include="Content\js\comboTreePlugin.js" />
+    <Content Include="Content\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\js\dataTables.responsive.js" />
+    <Content Include="Content\js\FormMaterial.js" />
+    <Content Include="Content\js\Formmaterialreciept.js" />
+    <Content Include="Content\js\GoogleChart.js" />
+    <Content Include="Content\js\icontains.js" />
+    <Content Include="Content\js\jquery-ui1.12.1.js" />
+    <Content Include="Content\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\js\jquery.dataTables.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\metisMenu.min.js" />
+    <Content Include="Content\js\prettify.js" />
+    <Content Include="Content\js\sb-admin-2.js" />
+    <Content Include="Content\js\utils.js" />
+    <Content Include="Content\js\validator.min.js" />
+    <Content Include="Content\js\_makeTree.js" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="RememberMe.aspx" />
+    <Content Include="Report\frmAccountStatement.aspx" />
+    <Content Include="Report\FrmBalanceSheetReport.aspx" />
+    <Content Include="Report\frmCashAccount.aspx" />
+    <Content Include="Report\frmDaybookReport.aspx" />
+    <Content Include="Report\frmDetailsDepositReport.aspx" />
+    <Content Include="Report\frmFinalAccountsSettings.aspx" />
+    <Content Include="Report\frmGeneralLedgerReport.aspx" />
+    <Content Include="Report\frmLoanDetailList.aspx" />
+    <Content Include="Report\frmPassbookPrint.aspx" />
+    <Content Include="Report\frmProfitLossAcReport.aspx" />
+    <Content Include="Report\frmTradingAcReport.aspx" />
+    <Content Include="Report\frmTrailBalance.aspx" />
+    <Content Include="Report\frmVoterList.aspx" />
+    <Content Include="Report\LoanAcctDetails.aspx" />
+    <Content Include="Report\OverdueNPAList.aspx" />
+    <Content Include="Report\RdlcClientList.aspx" />
+    <Content Include="Transaction\Cashier_Counterbook.aspx" />
+    <Content Include="Transaction\frmAccountClosing.aspx" />
+    <Content Include="Transaction\frmAccountOpening.aspx" />
+    <Content Include="Transaction\frmAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmCBSACOpening.aspx" />
+    <Content Include="Transaction\frmGeneralTransaction.aspx" />
+    <Content Include="Transaction\frmInvestmentAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmInvestmentAcOpening.aspx" />
+    <Content Include="Transaction\frmInwardDetails.aspx" />
+    <Content Include="Transaction\frmJournaltransaciton.aspx" />
+    <Content Include="Transaction\frmLoanAccountOpening.aspx" />
+    <Content Include="Transaction\frmLoanAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmLoanDisbursment.aspx" />
+    <Content Include="Transaction\frmLoanRepayment.aspx" />
+    <Content Include="Transaction\frmModifyTransaction.aspx" />
+    <Content Include="Transaction\frmSHGAccountOpening.aspx" />
+    <Content Include="Transaction\frmSHGAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmStockTransaction.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConvertJsonStringToDataTable.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToAccountStatementReport.aspx.cs">
+      <DependentUpon>ExportToAccountStatementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToAccountStatementReport.aspx.designer.cs">
+      <DependentUpon>ExportToAccountStatementReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToCashAccountReport.aspx.cs">
+      <DependentUpon>ExportToCashAccountReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToCashAccountReport.aspx.designer.cs">
+      <DependentUpon>ExportToCashAccountReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToCashBookReport.aspx.cs">
+      <DependentUpon>ExportToCashBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToCashBookReport.aspx.designer.cs">
+      <DependentUpon>ExportToCashBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToClientListReport.aspx.cs">
+      <DependentUpon>ExportToClientListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToClientListReport.aspx.designer.cs">
+      <DependentUpon>ExportToClientListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDayBookReport.aspx.cs">
+      <DependentUpon>ExportToDayBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDayBookReport.aspx.designer.cs">
+      <DependentUpon>ExportToDayBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx.cs">
+      <DependentUpon>ExportToDetailsDepositLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx.designer.cs">
+      <DependentUpon>ExportToDetailsDepositLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx.cs">
+      <DependentUpon>ExportToDetailsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx.designer.cs">
+      <DependentUpon>ExportToDetailsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToGeneralLedgerReport.aspx.cs">
+      <DependentUpon>ExportToGeneralLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToGeneralLedgerReport.aspx.designer.cs">
+      <DependentUpon>ExportToGeneralLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToloanActDetailsReport.aspx.cs">
+      <DependentUpon>ExportToloanActDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToloanActDetailsReport.aspx.designer.cs">
+      <DependentUpon>ExportToloanActDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToLoanDetailListReport.aspx.cs">
+      <DependentUpon>ExportToLoanDetailListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToLoanDetailListReport.aspx.designer.cs">
+      <DependentUpon>ExportToLoanDetailListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToOutStandingNPAList.aspx.cs">
+      <DependentUpon>ExportToOutStandingNPAList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToOutStandingNPAList.aspx.designer.cs">
+      <DependentUpon>ExportToOutStandingNPAList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToTrialBalanceReport.aspx.cs">
+      <DependentUpon>ExportToTrialBalanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToTrialBalanceReport.aspx.designer.cs">
+      <DependentUpon>ExportToTrialBalanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\balUpdate.aspx.cs">
+      <DependentUpon>balUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\balUpdate.aspx.designer.cs">
+      <DependentUpon>balUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmACGroupMasterList.aspx.cs">
+      <DependentUpon>frmACGroupMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmACGroupMasterList.aspx.designer.cs">
+      <DependentUpon>frmACGroupMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmDateConfiguration.aspx.cs">
+      <DependentUpon>frmDateConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmDateConfiguration.aspx.designer.cs">
+      <DependentUpon>frmDateConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmDepositMaster.aspx.cs">
+      <DependentUpon>frmDepositMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmDepositMaster.aspx.designer.cs">
+      <DependentUpon>frmDepositMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmDepositMasterList.aspx.cs">
+      <DependentUpon>frmDepositMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmDepositMasterList.aspx.designer.cs">
+      <DependentUpon>frmDepositMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMaster.aspx.cs">
+      <DependentUpon>frmEmployeeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMaster.aspx.designer.cs">
+      <DependentUpon>frmEmployeeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMasterList.aspx.cs">
+      <DependentUpon>frmEmployeeMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMasterList.aspx.designer.cs">
+      <DependentUpon>frmEmployeeMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmItemClass.aspx.cs">
+      <DependentUpon>FrmItemClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmItemClass.aspx.designer.cs">
+      <DependentUpon>FrmItemClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmItemClassList.aspx.cs">
+      <DependentUpon>frmItemClassList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmItemClassList.aspx.designer.cs">
+      <DependentUpon>frmItemClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmItemMaster.aspx.cs">
+      <DependentUpon>FrmItemMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmItemMaster.aspx.designer.cs">
+      <DependentUpon>FrmItemMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmItemMasterList.aspx.cs">
+      <DependentUpon>frmItemMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmItemMasterList.aspx.designer.cs">
+      <DependentUpon>frmItemMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmKYCList.aspx.cs">
+      <DependentUpon>frmKYCList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmKYCList.aspx.designer.cs">
+      <DependentUpon>frmKYCList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLedgerList.aspx.cs">
+      <DependentUpon>frmLedgerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLedgerList.aspx.designer.cs">
+      <DependentUpon>frmLedgerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMaster.aspx.cs">
+      <DependentUpon>frmLoanSchemeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMaster.aspx.designer.cs">
+      <DependentUpon>frmLoanSchemeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMasterList.aspx.cs">
+      <DependentUpon>frmLoanSchemeMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMasterList.aspx.designer.cs">
+      <DependentUpon>frmLoanSchemeMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLoanUpdateBalance.aspx.cs">
+      <DependentUpon>frmLoanUpdateBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLoanUpdateBalance.aspx.designer.cs">
+      <DependentUpon>frmLoanUpdateBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterAcGroup.aspx.cs">
+      <DependentUpon>frmMasterAcGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterAcGroup.aspx.designer.cs">
+      <DependentUpon>frmMasterAcGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterKYC.aspx.cs">
+      <DependentUpon>frmMasterKYC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterKYC.aspx.designer.cs">
+      <DependentUpon>frmMasterKYC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\ProjectBM.Master.cs">
+      <DependentUpon>ProjectBM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\ProjectBM.Master.designer.cs">
+      <DependentUpon>ProjectBM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterLedger.aspx.cs">
+      <DependentUpon>frmMasterLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterLedger.aspx.designer.cs">
+      <DependentUpon>frmMasterLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterSHGClient.aspx.cs">
+      <DependentUpon>frmMasterSHGClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterSHGClient.aspx.designer.cs">
+      <DependentUpon>frmMasterSHGClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterSocietySetup.aspx.cs">
+      <DependentUpon>frmMasterSocietySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterSocietySetup.aspx.designer.cs">
+      <DependentUpon>frmMasterSocietySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmOpeningBalanceUp.aspx.cs">
+      <DependentUpon>frmOpeningBalanceUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmOpeningBalanceUp.aspx.designer.cs">
+      <DependentUpon>frmOpeningBalanceUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmpractice.aspx.cs">
+      <DependentUpon>frmpractice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmpractice.aspx.designer.cs">
+      <DependentUpon>frmpractice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmProjectUser.aspx.cs">
+      <DependentUpon>frmProjectUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmProjectUser.aspx.designer.cs">
+      <DependentUpon>frmProjectUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmProjectUserList.aspx.cs">
+      <DependentUpon>frmProjectUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmProjectUserList.aspx.designer.cs">
+      <DependentUpon>frmProjectUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmSearchCustomer.aspx.cs">
+      <DependentUpon>FrmSearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmSearchCustomer.aspx.designer.cs">
+      <DependentUpon>FrmSearchCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSHGList.aspx.cs">
+      <DependentUpon>frmSHGList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSHGList.aspx.designer.cs">
+      <DependentUpon>frmSHGList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmStock_Update.aspx.cs">
+      <DependentUpon>frmStock_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmStock_Update.aspx.designer.cs">
+      <DependentUpon>frmStock_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSubledgerList.aspx.cs">
+      <DependentUpon>frmSubledgerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSubledgerList.aspx.designer.cs">
+      <DependentUpon>frmSubledgerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSubledgerMaster.aspx.cs">
+      <DependentUpon>frmSubledgerMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSubledgerMaster.aspx.designer.cs">
+      <DependentUpon>frmSubledgerMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSupplierMaster.aspx.cs">
+      <DependentUpon>frmSupplierMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSupplierMaster.aspx.designer.cs">
+      <DependentUpon>frmSupplierMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\mastermodifytransaction.aspx.cs">
+      <DependentUpon>mastermodifytransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\mastermodifytransaction.aspx.designer.cs">
+      <DependentUpon>mastermodifytransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyDB.cs">
+      <DependentUpon>MyDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MyDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="pacsbankingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pacsbankingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RememberMe.aspx.cs">
+      <DependentUpon>RememberMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RememberMe.aspx.designer.cs">
+      <DependentUpon>RememberMe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReports\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\DepositCertificateDetailListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositCertificateDetailListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\frmLoanSecKarbareport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmLoanSecKarbareport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\LoanDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoanDataset.xsd</DependentUpon>
+    </Compile>
+    <Content Include="Report\CrystalReports\NewDayBook.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewDayBook.rpt</DependentUpon>
+    </Content>
+    <Content Include="Report\CrystalReports\NewDayBookReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewDayBookReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Report\CrystalReports\rptAccountStatement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAccountStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptAccountStSlcode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAccountStSlcode.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptBRSReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBRSReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptCashAccount.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashAccount.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptCashAccountNew.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashAccountNew.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptCashAccountPayment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashAccountPayment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptCashAccountsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashAccountsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptCashAcountRecipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashAcountRecipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptClientReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClientReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDailyScrollOnDate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDailyScrollOnDate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDaybookPayment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDaybookPayment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDaybookReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDaybookReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDayBookReports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDayBookReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDetailListShare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetailListShare.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDetailsDepositLedgerReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetailsDepositLedgerReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDetailsDepositReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetailsDepositReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptfixedDepositDetailList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptfixedDepositDetailList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptGeneralLedgerReports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGeneralLedgerReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptGSTCalculationReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGSTCalculationReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptGSTPaybleReceibleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGSTPaybleReceibleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptItemWiseSalePurchaseReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptItemWiseSalePurchaseReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptJournalCash.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptJournalCash.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptJournalCredit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptJournalCredit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="Report\CrystalReports\rptloanAccountStReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptloanAccountStReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Report\CrystalReports\rptLoanAcctDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanAcctDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanActsDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanActsDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanCollectSchemeWise.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanCollectSchemeWise.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanCustomer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanCustomer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanDetailListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanDetailListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\RptLoanDueDetailsSub.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLoanDueDetailsSub.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\RptLoanInterest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLoanInterest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanPrincipal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanPrincipal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptLoanSecKVPNSC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoanSecKVPNSC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptmisDepositDetailListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptmisDepositDetailListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="Report\CrystalReports\rptnewGeneralLedgerReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptnewGeneralLedgerReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Report\CrystalReports\rptNPAFarm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNPAFarm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Report\CrystalReports\rptMisDepositReturn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMisDepositReturn.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptPassbookHeading.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPassbookHeading.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptPassbookTransaction.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPassbookTransaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptRecurringDepositDetailListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRecurringDepositDetailListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptRepaymentPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRepaymentPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptStockDailySalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStockDailySalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptStockDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStockDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptTrialBalance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTrialBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\StockJournalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockJournalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\StockMemoDetailsRPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockMemoDetailsRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\frmAccountStatement.aspx.cs">
+      <DependentUpon>frmAccountStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmAccountStatement.aspx.designer.cs">
+      <DependentUpon>frmAccountStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmBalanceSheetReport.aspx.cs">
+      <DependentUpon>FrmBalanceSheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\FrmBalanceSheetReport.aspx.designer.cs">
+      <DependentUpon>FrmBalanceSheetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmBRSReport.aspx.cs">
+      <DependentUpon>frmBRSReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmBRSReport.aspx.designer.cs">
+      <DependentUpon>frmBRSReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmCashAccount.aspx.cs">
+      <DependentUpon>frmCashAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmCashAccount.aspx.designer.cs">
+      <DependentUpon>frmCashAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmCashBookRepost.aspx.cs">
+      <DependentUpon>frmCashBookRepost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmCashBookRepost.aspx.designer.cs">
+      <DependentUpon>frmCashBookRepost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDailySaleReport.aspx.cs">
+      <DependentUpon>frmDailySaleReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDailySaleReport.aspx.designer.cs">
+      <DependentUpon>frmDailySaleReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDailyScroll.aspx.cs">
+      <DependentUpon>frmDailyScroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDailyScroll.aspx.designer.cs">
+      <DependentUpon>frmDailyScroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDaybookReport.aspx.cs">
+      <DependentUpon>frmDaybookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDaybookReport.aspx.designer.cs">
+      <DependentUpon>frmDaybookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDepositReturn.aspx.cs">
+      <DependentUpon>frmDepositReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDepositReturn.aspx.designer.cs">
+      <DependentUpon>frmDepositReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDepositRtn.aspx.cs">
+      <DependentUpon>frmDepositRtn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDepositRtn.aspx.designer.cs">
+      <DependentUpon>frmDepositRtn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDetailsDepositReport.aspx.cs">
+      <DependentUpon>frmDetailsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDetailsDepositReport.aspx.designer.cs">
+      <DependentUpon>frmDetailsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmFinalAccountsSettings.aspx.cs">
+      <DependentUpon>frmFinalAccountsSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmFinalAccountsSettings.aspx.designer.cs">
+      <DependentUpon>frmFinalAccountsSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmGeneralLedgerReport.aspx.cs">
+      <DependentUpon>frmGeneralLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmGeneralLedgerReport.aspx.designer.cs">
+      <DependentUpon>frmGeneralLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmGSTCalculation.aspx.cs">
+      <DependentUpon>frmGSTCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmGSTCalculation.aspx.designer.cs">
+      <DependentUpon>frmGSTCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmInvestmentDetailsDepositReport.aspx.cs">
+      <DependentUpon>frmInvestmentDetailsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmInvestmentDetailsDepositReport.aspx.designer.cs">
+      <DependentUpon>frmInvestmentDetailsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmItemWiseSalePurchaseReport.aspx.cs">
+      <DependentUpon>frmItemWiseSalePurchaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmItemWiseSalePurchaseReport.aspx.designer.cs">
+      <DependentUpon>frmItemWiseSalePurchaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmLoanCollectionByScheme.aspx.cs">
+      <DependentUpon>frmLoanCollectionByScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmLoanCollectionByScheme.aspx.designer.cs">
+      <DependentUpon>frmLoanCollectionByScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmLoanDetailList.aspx.cs">
+      <DependentUpon>frmLoanDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmLoanDetailList.aspx.designer.cs">
+      <DependentUpon>frmLoanDetailList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmLoanSecKarba.aspx.cs">
+      <DependentUpon>frmLoanSecKarba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmLoanSecKarba.aspx.designer.cs">
+      <DependentUpon>frmLoanSecKarba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmLoanSecKVPNSC.aspx.cs">
+      <DependentUpon>frmLoanSecKVPNSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmLoanSecKVPNSC.aspx.designer.cs">
+      <DependentUpon>frmLoanSecKVPNSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmLoanSecurityDetlReport.aspx.cs">
+      <DependentUpon>frmLoanSecurityDetlReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmLoanSecurityDetlReport.aspx.designer.cs">
+      <DependentUpon>frmLoanSecurityDetlReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmMisDepositReturn.aspx.cs">
+      <DependentUpon>frmMisDepositReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmMisDepositReturn.aspx.designer.cs">
+      <DependentUpon>frmMisDepositReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmNPAFarm.aspx.cs">
+      <DependentUpon>frmNPAFarm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmNPAFarm.aspx.designer.cs">
+      <DependentUpon>frmNPAFarm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmNPANonFarm.aspx.cs">
+      <DependentUpon>frmNPANonFarm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmNPANonFarm.aspx.designer.cs">
+      <DependentUpon>frmNPANonFarm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmPassbookPrint.aspx.cs">
+      <DependentUpon>frmPassbookPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmPassbookPrint.aspx.designer.cs">
+      <DependentUpon>frmPassbookPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmProfitLossAcReport.aspx.cs">
+      <DependentUpon>frmProfitLossAcReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmProfitLossAcReport.aspx.designer.cs">
+      <DependentUpon>frmProfitLossAcReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmSalesJournalReport.aspx.cs">
+      <DependentUpon>frmSalesJournalReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmSalesJournalReport.aspx.designer.cs">
+      <DependentUpon>frmSalesJournalReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmStockDetailsReport.aspx.cs">
+      <DependentUpon>frmStockDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmStockDetailsReport.aspx.designer.cs">
+      <DependentUpon>frmStockDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmSubledgerDetailsReport.aspx.cs">
+      <DependentUpon>frmSubledgerDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmSubledgerDetailsReport.aspx.designer.cs">
+      <DependentUpon>frmSubledgerDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmTradingAcReport.aspx.cs">
+      <DependentUpon>frmTradingAcReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmTradingAcReport.aspx.designer.cs">
+      <DependentUpon>frmTradingAcReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmTrailBalance.aspx.cs">
+      <DependentUpon>frmTrailBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmTrailBalance.aspx.designer.cs">
+      <DependentUpon>frmTrailBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmVoterList.aspx.cs">
+      <DependentUpon>frmVoterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmVoterList.aspx.designer.cs">
+      <DependentUpon>frmVoterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmVoucherSummary.aspx.cs">
+      <DependentUpon>frmVoucherSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmVoucherSummary.aspx.designer.cs">
+      <DependentUpon>frmVoucherSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_DailyScroll_ASON.aspx.cs">
+      <DependentUpon>frm_DailyScroll_ASON.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frm_DailyScroll_ASON.aspx.designer.cs">
+      <DependentUpon>frm_DailyScroll_ASON.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\GSTPayableReceiable.aspx.cs">
+      <DependentUpon>GSTPayableReceiable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\GSTPayableReceiable.aspx.designer.cs">
+      <DependentUpon>GSTPayableReceiable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LoanAcctDetails.aspx.cs">
+      <DependentUpon>LoanAcctDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\LoanAcctDetails.aspx.designer.cs">
+      <DependentUpon>LoanAcctDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LoanSchemeWisedisburse.aspx.cs">
+      <DependentUpon>LoanSchemeWisedisburse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\LoanSchemeWisedisburse.aspx.designer.cs">
+      <DependentUpon>LoanSchemeWisedisburse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\OverdueNPAList.aspx.cs">
+      <DependentUpon>OverdueNPAList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\OverdueNPAList.aspx.designer.cs">
+      <DependentUpon>OverdueNPAList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RdlcClientList.aspx.cs">
+      <DependentUpon>RdlcClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RdlcClientList.aspx.designer.cs">
+      <DependentUpon>RdlcClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StockMemoDetailsReport.aspx.cs">
+      <DependentUpon>StockMemoDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\StockMemoDetailsReport.aspx.designer.cs">
+      <DependentUpon>StockMemoDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Cashier_Counterbook.aspx.cs">
+      <DependentUpon>Cashier_Counterbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\Cashier_Counterbook.aspx.designer.cs">
+      <DependentUpon>Cashier_Counterbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\DataObject.cs" />
+    <Compile Include="Transaction\frmAccountClosing.aspx.cs">
+      <DependentUpon>frmAccountClosing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountClosing.aspx.designer.cs">
+      <DependentUpon>frmAccountClosing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpening.aspx.cs">
+      <DependentUpon>frmAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpeningList.aspx.cs">
+      <DependentUpon>frmAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmBankLedgerBalanceUpdate.aspx.cs">
+      <DependentUpon>frmBankLedgerBalanceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmBankLedgerBalanceUpdate.aspx.designer.cs">
+      <DependentUpon>frmBankLedgerBalanceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmBatchTransaction.aspx.cs">
+      <DependentUpon>frmBatchTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmBatchTransaction.aspx.designer.cs">
+      <DependentUpon>frmBatchTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmCBSACOpening.aspx.cs">
+      <DependentUpon>frmCBSACOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmCBSACOpening.aspx.designer.cs">
+      <DependentUpon>frmCBSACOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmCreditLimitConfiguration.aspx.cs">
+      <DependentUpon>frmCreditLimitConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmCreditLimitConfiguration.aspx.designer.cs">
+      <DependentUpon>frmCreditLimitConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmDeleteRepayment.aspx.cs">
+      <DependentUpon>frmDeleteRepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmDeleteRepayment.aspx.designer.cs">
+      <DependentUpon>frmDeleteRepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmDetailListShare.aspx.cs">
+      <DependentUpon>frmDetailListShare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmDetailListShare.aspx.designer.cs">
+      <DependentUpon>frmDetailListShare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmGeneralTransaction.aspx.cs">
+      <DependentUpon>frmGeneralTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmGeneralTransaction.aspx.designer.cs">
+      <DependentUpon>frmGeneralTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountClosing.aspx.cs">
+      <DependentUpon>frmInvestmentAccountClosing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountClosing.aspx.designer.cs">
+      <DependentUpon>frmInvestmentAccountClosing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountOpeningList.aspx.cs">
+      <DependentUpon>frmInvestmentAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmInvestmentAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAcOpening.aspx.cs">
+      <DependentUpon>frmInvestmentAcOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAcOpening.aspx.designer.cs">
+      <DependentUpon>frmInvestmentAcOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInwardDetails.aspx.cs">
+      <DependentUpon>frmInwardDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInwardDetails.aspx.designer.cs">
+      <DependentUpon>frmInwardDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmJournaltransaciton.aspx.cs">
+      <DependentUpon>frmJournaltransaciton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmJournaltransaciton.aspx.designer.cs">
+      <DependentUpon>frmJournaltransaciton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoan.cs" />
+    <Compile Include="Transaction\frmLoanAccountOpening.aspx.cs">
+      <DependentUpon>frmLoanAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmLoanAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpeningList.aspx.cs">
+      <DependentUpon>frmLoanAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmLoanAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAcOpening.aspx.cs">
+      <DependentUpon>frmLoanAcOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAcOpening.aspx.designer.cs">
+      <DependentUpon>frmLoanAcOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanDisbursment.aspx.cs">
+      <DependentUpon>frmLoanDisbursment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanDisbursment.aspx.designer.cs">
+      <DependentUpon>frmLoanDisbursment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanEMI.aspx.cs">
+      <DependentUpon>frmLoanEMI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanEMI.aspx.designer.cs">
+      <DependentUpon>frmLoanEMI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanRepayment.aspx.cs">
+      <DependentUpon>frmLoanRepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanRepayment.aspx.designer.cs">
+      <DependentUpon>frmLoanRepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanSecurityEntry.aspx.cs">
+      <DependentUpon>frmLoanSecurityEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanSecurityEntry.aspx.designer.cs">
+      <DependentUpon>frmLoanSecurityEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmMISINTDetails.aspx.cs">
+      <DependentUpon>frmMISINTDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmMISINTDetails.aspx.designer.cs">
+      <DependentUpon>frmMISINTDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmModifyTransaction.aspx.cs">
+      <DependentUpon>frmModifyTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmModifyTransaction.aspx.designer.cs">
+      <DependentUpon>frmModifyTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmNeftRtgs.aspx.cs">
+      <DependentUpon>frmNeftRtgs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmNeftRtgs.aspx.designer.cs">
+      <DependentUpon>frmNeftRtgs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmNEFTRTGSNEXT.aspx.cs">
+      <DependentUpon>frmNEFTRTGSNEXT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmNEFTRTGSNEXT.aspx.designer.cs">
+      <DependentUpon>frmNEFTRTGSNEXT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmPassBook.aspx.cs">
+      <DependentUpon>frmPassBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmPassBook.aspx.designer.cs">
+      <DependentUpon>frmPassBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSalesPurchase.aspx.cs">
+      <DependentUpon>frmSalesPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSalesPurchase.aspx.designer.cs">
+      <DependentUpon>frmSalesPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSavingsInterestCalculation.aspx.cs">
+      <DependentUpon>frmSavingsInterestCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSavingsInterestCalculation.aspx.designer.cs">
+      <DependentUpon>frmSavingsInterestCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountClosing.aspx.cs">
+      <DependentUpon>frmShareAccountClosing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountClosing.aspx.designer.cs">
+      <DependentUpon>frmShareAccountClosing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountOpening.aspx.cs">
+      <DependentUpon>frmShareAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmShareAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountOpeningList.aspx.cs">
+      <DependentUpon>frmShareAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmShareAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmShareAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmShareDividendCalculation.aspx.cs">
+      <DependentUpon>frmShareDividendCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmShareDividendCalculation.aspx.designer.cs">
+      <DependentUpon>frmShareDividendCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpening.aspx.cs">
+      <DependentUpon>frmSHGAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmSHGAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpeningList.aspx.cs">
+      <DependentUpon>frmSHGAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmSHGAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmStockTransaction.aspx.cs">
+      <DependentUpon>frmStockTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmStockTransaction.aspx.designer.cs">
+      <DependentUpon>frmStockTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmTextFileUpload.aspx.cs">
+      <DependentUpon>frmTextFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmTextFileUpload.aspx.designer.cs">
+      <DependentUpon>frmTextFileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmVoucherAuthorization.aspx.cs">
+      <DependentUpon>frmVoucherAuthorization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmVoucherAuthorization.aspx.designer.cs">
+      <DependentUpon>frmVoucherAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmVoucherModification.aspx.cs">
+      <DependentUpon>frmVoucherModification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmVoucherModification.aspx.designer.cs">
+      <DependentUpon>frmVoucherModification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PassBook.aspx.cs">
+      <DependentUpon>PassBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\PassBook.aspx.designer.cs">
+      <DependentUpon>PassBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm.aspx.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm.aspx.designer.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{e83c03f7-dfbc-4fe2-828e-6acf5aaf8fbc}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4b6b051f-0bcc-4609-8e38-13b0e60484ab}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\frmLoanSecKarbareport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>frmLoanSecKarbareport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Report\CrystalReports\NewDayBook.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewDayBook.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Report\CrystalReports\rptBRSReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBRSReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptCashAccountNew.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashAccountNew.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDailyScrollOnDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDailyScrollOnDate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDetailListShare.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetailListShare.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptItemWiseSalePurchaseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptItemWiseSalePurchaseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptJournalCash.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptJournalCash.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptJournalCredit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptJournalCredit.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanCollectSchemeWise.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanCollectSchemeWise.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanSecKVPNSC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanSecKVPNSC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Report\CrystalReports\rptnewGeneralLedgerReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptnewGeneralLedgerReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Report\CrystalReports\rptNPAFarm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNPAFarm.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Report\CrystalReports\rptMisDepositReturn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMisDepositReturn.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\StockJournalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockJournalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\StockMemoDetailsRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockMemoDetailsRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="MyDB.dbml.layout">
+      <DependentUpon>MyDB.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Report\CrystalReports\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\DepositCertificateDetailListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DepositCertificateDetailListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Report\CrystalReports\NewDayBookReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewDayBookReport.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Report\CrystalReports\rptAccountStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAccountStatement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptAccountStSlcode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAccountStSlcode.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptCashAccount.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashAccount.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptCashAccountPayment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashAccountPayment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptCashAccountsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashAccountsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptCashAcountRecipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashAcountRecipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptClientReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClientReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDaybookPayment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDaybookPayment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDaybookReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDaybookReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDayBookReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDayBookReports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDetailsDepositLedgerReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetailsDepositLedgerReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDetailsDepositReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetailsDepositReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptfixedDepositDetailList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptfixedDepositDetailList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Report\CrystalReports\rptGeneralLedgerReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGeneralLedgerReports.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Report\CrystalReports\rptGSTCalculationReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGSTCalculationReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptGSTPaybleReceibleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGSTPaybleReceibleReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHeader.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Report\CrystalReports\rptloanAccountStReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptloanAccountStReport.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanAcctDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanAcctDetailReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanActsDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanActsDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanDetailListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanDetailListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\RptLoanDueDetailsSub.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLoanDueDetailsSub.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\RptLoanInterest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLoanInterest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptLoanPrincipal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoanPrincipal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptmisDepositDetailListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptmisDepositDetailListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptPassbookHeading.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPassbookHeading.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptPassbookTransaction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPassbookTransaction.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptRecurringDepositDetailListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRecurringDepositDetailListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptRepaymentPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRepaymentPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptStockDailySalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStockDailySalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptStockDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStockDetailReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptTrialBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTrialBalance.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transaction\CRREPORT\" />
+    <Folder Include="UploadFiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50436</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50436</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

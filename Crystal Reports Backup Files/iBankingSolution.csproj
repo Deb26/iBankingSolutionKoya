@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{768376B9-9128-4CE1-9EA2-C342169EFE3C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iBankingSolution</RootNamespace>
+    <AssemblyName>iBankingSolution</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BusinessObject">
+      <HintPath>..\BusinessObject\bin\Debug\BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\edit.png" />
+    <Content Include="Content\images\refresh.jpg" />
+    <Content Include="ExportDownloadPage\ExportToClientListReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx" />
+    <Content Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx" />
+    <Content Include="Images\AddRow.png" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\Empty_DP.jpg" />
+    <Content Include="Images\logo_sigclub.png" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\No_Person.jpg" />
+    <Content Include="Images\No_Signature.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Master\frmACGroupMasterList.aspx" />
+    <Content Include="Master\frmDepositMaster.aspx" />
+    <Content Include="Master\frmDepositMasterList.aspx" />
+    <Content Include="Master\frmEmployeeMaster.aspx" />
+    <Content Include="Master\frmEmployeeMasterList.aspx" />
+    <Content Include="Master\FrmItemClass.aspx" />
+    <Content Include="Master\FrmItemMaster.aspx" />
+    <Content Include="Master\frmItemMasterList.aspx" />
+    <Content Include="Master\frmKYCList.aspx" />
+    <Content Include="Master\frmLedgerList.aspx" />
+    <Content Include="Master\frmLoanSchemeMaster.aspx" />
+    <Content Include="Master\frmLoanSchemeMasterList.aspx" />
+    <Content Include="Master\frmMasterAcGroup.aspx" />
+    <Content Include="Master\frmMasterKYC.aspx" />
+    <Content Include="Master\frmMasterLedger.aspx" />
+    <Content Include="Master\frmMasterSHGClient.aspx" />
+    <Content Include="Master\frmMasterSocietySetup.aspx" />
+    <Content Include="Master\frmOpeningBalanceUp.aspx" />
+    <Content Include="Master\frmProjectUser.aspx" />
+    <Content Include="Master\frmProjectUserList.aspx" />
+    <Content Include="Master\FrmSearchCustomer.aspx" />
+    <Content Include="Master\frmSHGList.aspx" />
+    <Content Include="Master\frmSubledgerList.aspx" />
+    <Content Include="Master\frmSubledgerMaster.aspx" />
+    <Content Include="Master\frmSupplierMaster.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="MasterPages\ProjectBM.Master" />
+    <Content Include="Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\css\bootstrap-multiselect.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\BootstrapPopup.css" />
+    <Content Include="Content\css\dataTables.bootstrap.css" />
+    <Content Include="Content\css\dataTables.responsive.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery-ui1.12.1.css" />
+    <Content Include="Content\css\metisMenu.min.css" />
+    <Content Include="Content\css\prettify.css" />
+    <Content Include="Content\css\sb-admin-2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\css\StyleSheet.css" />
+    <Content Include="Content\DDLScript\bootstrap.min.css" />
+    <Content Include="Content\DDLScript\select2.full.min.js" />
+    <Content Include="Content\DDLScript\_all-skins.min.css" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\AddRow.png" />
+    <Content Include="Content\images\Cyrus_Logo.gif" />
+    <Content Include="Content\images\Cyrus_LogoICO.ico" />
+    <Content Include="Content\images\Cyrus_Logo_Inverse.gif" />
+    <Content Include="Content\images\Cyrus_Logo_Small.gif" />
+    <Content Include="Content\images\delete.png" />
+    <Content Include="Content\images\LoginImg1.jpg" />
+    <Content Include="Content\images\LoginImg2.jpg" />
+    <Content Include="Content\images\LoginImg4.jpg" />
+    <Content Include="Content\images\Logo.jpg" />
+    <Content Include="Content\images\main-bg.png" />
+    <Content Include="Content\images\male-avatar-icon.png" />
+    <Content Include="Content\images\NOImage.png" />
+    <Content Include="Content\images\remove.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\js\background.cycle.js" />
+    <Content Include="Content\js\bootstrap-confirmation.min.js" />
+    <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\js\bootstrap-multiselect.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\bootstrap3-typeahead.min.js" />
+    <Content Include="Content\js\Chart.bundle.js" />
+    <Content Include="Content\js\comboTreePlugin.js" />
+    <Content Include="Content\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\js\dataTables.responsive.js" />
+    <Content Include="Content\js\FormMaterial.js" />
+    <Content Include="Content\js\Formmaterialreciept.js" />
+    <Content Include="Content\js\GoogleChart.js" />
+    <Content Include="Content\js\icontains.js" />
+    <Content Include="Content\js\jquery-ui1.12.1.js" />
+    <Content Include="Content\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\js\jquery.dataTables.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\metisMenu.min.js" />
+    <Content Include="Content\js\prettify.js" />
+    <Content Include="Content\js\sb-admin-2.js" />
+    <Content Include="Content\js\utils.js" />
+    <Content Include="Content\js\validator.min.js" />
+    <Content Include="Content\js\_makeTree.js" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="RememberMe.aspx" />
+    <Content Include="Report\frmDetailsDepositReport.aspx" />
+    <Content Include="Report\RdlcClientList.aspx" />
+    <Content Include="Transaction\Cashier_Counterbook.aspx" />
+    <Content Include="Transaction\frmAccountClosing.aspx" />
+    <Content Include="Transaction\frmAccountOpening.aspx" />
+    <Content Include="Transaction\frmAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmGeneralTransaction.aspx" />
+    <Content Include="Transaction\frmInvestmentAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmInvestmentAcOpening.aspx" />
+    <Content Include="Transaction\frmJournaltransaciton.aspx" />
+    <Content Include="Transaction\frmLoanAccountOpening.aspx" />
+    <Content Include="Transaction\frmLoanAccountOpeningList.aspx" />
+    <Content Include="Transaction\frmLoanDisbursment.aspx" />
+    <Content Include="Transaction\frmLoanRepayment.aspx" />
+    <Content Include="Transaction\frmSHGAccountOpening.aspx" />
+    <Content Include="Transaction\frmSHGAccountOpeningList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToClientListReport.aspx.cs">
+      <DependentUpon>ExportToClientListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToClientListReport.aspx.designer.cs">
+      <DependentUpon>ExportToClientListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx.cs">
+      <DependentUpon>ExportToDetailsDepositLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositLedgerReport.aspx.designer.cs">
+      <DependentUpon>ExportToDetailsDepositLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx.cs">
+      <DependentUpon>ExportToDetailsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDownloadPage\ExportToDetailsDepositReport.aspx.designer.cs">
+      <DependentUpon>ExportToDetailsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmACGroupMasterList.aspx.cs">
+      <DependentUpon>frmACGroupMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmACGroupMasterList.aspx.designer.cs">
+      <DependentUpon>frmACGroupMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmDepositMaster.aspx.cs">
+      <DependentUpon>frmDepositMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmDepositMaster.aspx.designer.cs">
+      <DependentUpon>frmDepositMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmDepositMasterList.aspx.cs">
+      <DependentUpon>frmDepositMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmDepositMasterList.aspx.designer.cs">
+      <DependentUpon>frmDepositMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMaster.aspx.cs">
+      <DependentUpon>frmEmployeeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMaster.aspx.designer.cs">
+      <DependentUpon>frmEmployeeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMasterList.aspx.cs">
+      <DependentUpon>frmEmployeeMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmEmployeeMasterList.aspx.designer.cs">
+      <DependentUpon>frmEmployeeMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmItemClass.aspx.cs">
+      <DependentUpon>FrmItemClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmItemClass.aspx.designer.cs">
+      <DependentUpon>FrmItemClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmItemMaster.aspx.cs">
+      <DependentUpon>FrmItemMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmItemMaster.aspx.designer.cs">
+      <DependentUpon>FrmItemMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmItemMasterList.aspx.cs">
+      <DependentUpon>frmItemMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmItemMasterList.aspx.designer.cs">
+      <DependentUpon>frmItemMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmKYCList.aspx.cs">
+      <DependentUpon>frmKYCList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmKYCList.aspx.designer.cs">
+      <DependentUpon>frmKYCList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLedgerList.aspx.cs">
+      <DependentUpon>frmLedgerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLedgerList.aspx.designer.cs">
+      <DependentUpon>frmLedgerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMaster.aspx.cs">
+      <DependentUpon>frmLoanSchemeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMaster.aspx.designer.cs">
+      <DependentUpon>frmLoanSchemeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMasterList.aspx.cs">
+      <DependentUpon>frmLoanSchemeMasterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmLoanSchemeMasterList.aspx.designer.cs">
+      <DependentUpon>frmLoanSchemeMasterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterAcGroup.aspx.cs">
+      <DependentUpon>frmMasterAcGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterAcGroup.aspx.designer.cs">
+      <DependentUpon>frmMasterAcGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterKYC.aspx.cs">
+      <DependentUpon>frmMasterKYC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterKYC.aspx.designer.cs">
+      <DependentUpon>frmMasterKYC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\ProjectBM.Master.cs">
+      <DependentUpon>ProjectBM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\ProjectBM.Master.designer.cs">
+      <DependentUpon>ProjectBM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterLedger.aspx.cs">
+      <DependentUpon>frmMasterLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterLedger.aspx.designer.cs">
+      <DependentUpon>frmMasterLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterSHGClient.aspx.cs">
+      <DependentUpon>frmMasterSHGClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterSHGClient.aspx.designer.cs">
+      <DependentUpon>frmMasterSHGClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterSocietySetup.aspx.cs">
+      <DependentUpon>frmMasterSocietySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterSocietySetup.aspx.designer.cs">
+      <DependentUpon>frmMasterSocietySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmOpeningBalanceUp.aspx.cs">
+      <DependentUpon>frmOpeningBalanceUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmOpeningBalanceUp.aspx.designer.cs">
+      <DependentUpon>frmOpeningBalanceUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmProjectUser.aspx.cs">
+      <DependentUpon>frmProjectUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmProjectUser.aspx.designer.cs">
+      <DependentUpon>frmProjectUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmProjectUserList.aspx.cs">
+      <DependentUpon>frmProjectUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmProjectUserList.aspx.designer.cs">
+      <DependentUpon>frmProjectUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmSearchCustomer.aspx.cs">
+      <DependentUpon>FrmSearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\FrmSearchCustomer.aspx.designer.cs">
+      <DependentUpon>FrmSearchCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSHGList.aspx.cs">
+      <DependentUpon>frmSHGList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSHGList.aspx.designer.cs">
+      <DependentUpon>frmSHGList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSubledgerList.aspx.cs">
+      <DependentUpon>frmSubledgerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSubledgerList.aspx.designer.cs">
+      <DependentUpon>frmSubledgerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSubledgerMaster.aspx.cs">
+      <DependentUpon>frmSubledgerMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSubledgerMaster.aspx.designer.cs">
+      <DependentUpon>frmSubledgerMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSupplierMaster.aspx.cs">
+      <DependentUpon>frmSupplierMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\frmSupplierMaster.aspx.designer.cs">
+      <DependentUpon>frmSupplierMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RememberMe.aspx.cs">
+      <DependentUpon>RememberMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RememberMe.aspx.designer.cs">
+      <DependentUpon>RememberMe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptClientReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClientReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDetailsDepositLedgerReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetailsDepositLedgerReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReports\rptDetailsDepositReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetailsDepositReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDetailsDepositReport.aspx.cs">
+      <DependentUpon>frmDetailsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\frmDetailsDepositReport.aspx.designer.cs">
+      <DependentUpon>frmDetailsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RdlcClientList.aspx.cs">
+      <DependentUpon>RdlcClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RdlcClientList.aspx.designer.cs">
+      <DependentUpon>RdlcClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Cashier_Counterbook.aspx.cs">
+      <DependentUpon>Cashier_Counterbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\Cashier_Counterbook.aspx.designer.cs">
+      <DependentUpon>Cashier_Counterbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAccountClosing.aspx.cs">
+      <DependentUpon>frmAccountClosing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountClosing.aspx.designer.cs">
+      <DependentUpon>frmAccountClosing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpening.aspx.cs">
+      <DependentUpon>frmAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpeningList.aspx.cs">
+      <DependentUpon>frmAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmGeneralTransaction.aspx.cs">
+      <DependentUpon>frmGeneralTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmGeneralTransaction.aspx.designer.cs">
+      <DependentUpon>frmGeneralTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountOpeningList.aspx.cs">
+      <DependentUpon>frmInvestmentAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmInvestmentAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAcOpening.aspx.cs">
+      <DependentUpon>frmInvestmentAcOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmInvestmentAcOpening.aspx.designer.cs">
+      <DependentUpon>frmInvestmentAcOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmJournaltransaciton.aspx.cs">
+      <DependentUpon>frmJournaltransaciton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmJournaltransaciton.aspx.designer.cs">
+      <DependentUpon>frmJournaltransaciton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpening.aspx.cs">
+      <DependentUpon>frmLoanAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmLoanAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpeningList.aspx.cs">
+      <DependentUpon>frmLoanAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmLoanAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanDisbursment.aspx.cs">
+      <DependentUpon>frmLoanDisbursment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanDisbursment.aspx.designer.cs">
+      <DependentUpon>frmLoanDisbursment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmLoanRepayment.aspx.cs">
+      <DependentUpon>frmLoanRepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmLoanRepayment.aspx.designer.cs">
+      <DependentUpon>frmLoanRepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpening.aspx.cs">
+      <DependentUpon>frmSHGAccountOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpening.aspx.designer.cs">
+      <DependentUpon>frmSHGAccountOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpeningList.aspx.cs">
+      <DependentUpon>frmSHGAccountOpeningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmSHGAccountOpeningList.aspx.designer.cs">
+      <DependentUpon>frmSHGAccountOpeningList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{e83c03f7-dfbc-4fe2-828e-6acf5aaf8fbc}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4b6b051f-0bcc-4609-8e38-13b0e60484ab}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptClientReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClientReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDetailsDepositLedgerReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetailsDepositLedgerReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReports\rptDetailsDepositReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetailsDepositReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50436</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50436/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

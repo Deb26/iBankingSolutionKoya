@@ -1,0 +1,82 @@
+﻿@page {
+    size: auto;
+    margin: 0mm;
+    /*margin-bottom:10px;*/
+}
+
+body {
+    /*margin: 10px 10px 10px 10px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#passbook {
+    table-layout: fixed;
+    /*padding-top: 10px;*/
+    padding-right: 10px;
+    /*padding-bottom: 10px;*/
+    padding-left: 10px;
+    font-size: 10px;
+    font-family: 'Times New Roman';
+    /*width: 864px;*/
+    margin-top: 10px;
+    /*margin-bottom: 2px;*/
+}
+
+
+#tblpassbook {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    /*padding-top: 10px;*/
+    padding-right: 5px;
+    /*padding-bottom: 20px;*/
+    padding-left: 5px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+th {
+    border: 1px solid black;
+    width: 6em;
+}
+
+td {
+}
+
+#tblpassbook > thead > tr > th {
+    border: 1px solid black;
+    padding: 1px;
+}
+
+#tblpassbook tr:nth-child(even) {
+    /*background-color: #f2f2f2;*/
+}
+
+#tblpassbook tr:hover {
+    /*background-color: #ddd;*/
+}
+
+#tblpassbook th {
+    padding-top: 1px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    text-align: left;
+    /*background-color: #4CAF50;*/
+    /*color: white;*/
+}
+
+.ten {
+    width: 10%;
+}
+
+.forty {
+    width: 35%;
+}
+
+
+.fifteen {
+    width: 15%;
+}

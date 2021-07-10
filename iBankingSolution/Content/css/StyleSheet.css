@@ -1,0 +1,59 @@
+﻿body {
+}
+.myButton
+{
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #ededed;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: 1px solid #003366;
+    display: inline-block;
+    color: #003366;
+    font-family: Times new Roman;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 4px 24px;
+    text-decoration: none;
+    height: 26px;
+}
+.head_tag
+{
+    background: url(../images/main-bg.png) repeat-x center;
+    height: 20px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    line-height: 20px;
+}
+.styled-select
+{
+    width: 308px;
+    height: 23px;
+    overflow: hidden;
+    font: normal 10px Times new Roman;
+    background: url(arrow_xs.png) no-repeat 225px #FFF;
+    border: 1px solid #ccc;
+}
+.textbox
+{
+    font-family: Times new Roman;
+    font-size: 10px;
+    font-style: normal;
+    border-top: solid 1px #8e8e8e;
+    border-right: solid 1px #d1d1d1;
+    border-left: solid 1px #d1d1d1;
+    border-bottom: solid 1px #e4e4e4;
+    text-transform: uppercase;
+    resize: none;
+}
+.mGrid
+{
+    width: 100%;
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}

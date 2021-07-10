@@ -1,0 +1,20 @@
+CHANGES IN DATE IN THE VIEW
+
+op_bal_depost
+cash_op_bal
+CJ_TRAIL
+
+SLOBP
+
+OPBAL_LOAN
+
+
+PROCEDURE
+-------------
+
+-------------
+proc_CalTotalReceiptPayment
+proc_CalTotalReceiptPaymentOther
+proc_CalTotalReceiptPayment
+proc_ReportAcctStatement
+ 

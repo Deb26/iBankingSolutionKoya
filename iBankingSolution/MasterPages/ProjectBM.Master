@@ -1,0 +1,1268 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProjectBM.master.cs" Inherits="iBankingSolution.MasterPages.ProjectBM" %>
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>EvantageBanking</title>
+    <link rel="shortcut icon" href="<%=  Application["BasePage"] %>/Content/images/favicon.ico" type="image/x-icon">
+    <!-- Js -->
+    <script src="<%=  Application["BasePage"] %>/Content/js/jquery.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/bootstrap.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/sb-admin-2.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/metisMenu.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/jquery.dataTables.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/dataTables.bootstrap.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/dataTables.responsive.js"></script>
+    <%--<script src="<%=  Application["BasePage"] %>/Content/js/bootstrap-datepicker.js"></script>--%>
+    <script src="<%=  Application["BasePage"] %>/Content/js/bootstrap-confirmation.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/bootstrap3-typeahead.min.js"></script>
+    <script src="<%=  Application["BasePage"] %>/Content/js/jquery-ui1.12.1.js"></script>
+     <link href="../Content/css/newdtpicker.css" rel="stylesheet" />
+    <script src="../Content/js/newdtpicker.js"></script>
+
+
+
+    <%--<script src="<%=  Application["BasePage"] %>/Content/js/GoogleChart.js"></script>--%>
+   <%-- <script src="<%=  Application["BasePage"] %>/Content/js/Chart.bundle.js"></script>--%>
+  <%--  <script src="<%=  Application["BasePage"] %>/Content/js/utils.js"></script>--%>
+    <!-- Js -->
+    <!-- Css -->
+    <link href="<%=  Application["BasePage"] %>/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/dataTables.responsive.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/select2.min.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/DDLScript/_all-skins.min.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="<%=  Application["BasePage"] %>/Content/css/jquery-ui1.12.1.css" rel="stylesheet" />
+
+    <!-- css -->
+    <style type="text/css">
+        .sticky-footer .my-auto {
+            min-height: 40px;
+            background-color: #BED3DF;
+        }
+
+        .my-auto span {
+            vertical-align: middle;
+            text-align: center;
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+            .my-auto span strong {
+                color: #337ab7;
+            }
+
+        .my-auto1 {
+            float: right;
+            margin-right: 30px;
+        }
+
+        #ui-datepicker-div {
+            z-index: 99 !important;
+        }
+
+        .numberCirclered {
+            border-radius: 13%;
+            behavior: url(PIE.htc);
+            margin-left: -2px;
+            margin-top: -15px;
+            position: absolute;
+            padding: 3px;
+            background: red;
+            /*border: 2px solid #666;*/
+            color: white;
+            text-align: center;
+            font: 10px Arial, sans-serif;
+        }
+
+        .numberCirclegreen {
+            border-radius: 13%;
+            behavior: url(PIE.htc);
+            margin-left: -2px;
+            margin-top: -15px;
+            position: absolute;
+            padding: 3px;
+            background: #5cb85c;
+            /*border: 2px solid #666;*/
+            color: white;
+            text-align: center;
+            font: 10px Arial, sans-serif;
+        }
+
+        .numberCircleyellow {
+            border-radius: 13%;
+            behavior: url(PIE.htc);
+            margin-left: -2px;
+            margin-top: -15px;
+            position: absolute;
+            padding: 3px;
+            background: #f0ad4e;
+            /*border: 2px solid #666;*/
+            color: white;
+            text-align: center;
+            font: 10px Arial, sans-serif;
+        }
+
+        #stext {
+            text-align: left;
+            font-family: sans-serif;
+            color: white;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        #SecondsUntilExpire {
+            text-align: left;
+            font-family: sans-serif;
+            color: white;
+            display: inline-block;
+            font-weight: 30;
+            font-size: 20px;
+        }
+
+        marquee {
+            padding: 10px 0px;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var IDLE_TIMEOUT = 900; //seconds 15min
+
+        var _idleSecondsCounter = 0;
+        document.onclick = function () {
+            _idleSecondsCounter = 0;
+        };
+        document.onmousemove = function () {
+            _idleSecondsCounter = 0;
+        };
+
+        document.onkeypress = function () {
+            _idleSecondsCounter = 0;
+        };
+        window.setInterval(CheckIdleTime, 1000);
+
+        function CheckIdleTime() {
+            _idleSecondsCounter++;
+            var oPanel = document.getElementById("SecondsUntilExpire");
+            if (oPanel)
+                oPanel.innerHTML = parseInt((IDLE_TIMEOUT - _idleSecondsCounter) / 60) + ":";
+            oPanel.innerHTML += (IDLE_TIMEOUT - _idleSecondsCounter) % 60 < 10 ? "0" + (IDLE_TIMEOUT - _idleSecondsCounter) % 60 : (IDLE_TIMEOUT - _idleSecondsCounter) % 60;
+            if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+                //alert("Your Session Time expired. Please Login.");
+                document.location.href = "https://evantagebanking.in//";
+            }
+        }
+
+    </script>
+
+
+    <script language="javascript" type="text/javascript">
+        //<![CDATA[</span />
+
+        var clicked = false;
+        function CheckBrowser() {
+            if (clicked == false) {
+                //Browser closed
+            }
+            else {
+                //redirected 
+                clicked = false;
+            }
+        }
+
+        function bodyUnload() {
+
+            if (clicked == false)//browser is closed
+            {
+                var request = GetRequest();
+
+                request.open("POST", "./LogOut.aspx", false);
+                request.send();
+                alert('This is close');
+            }
+        }
+        function GetRequest() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xmlhttp;
+        }
+</script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <%-- <script type="text/javascript">
+        $(document).ready(function () {
+            $('#adminalert').click(function () {
+                var jsonText = JSON.stringify({ UserID: '<%= Session["UserId"] %>' });
+      
+                  $.ajax({
+                        type: "POST",
+                        url: '<%= ResolveUrl("../General/CallAjax.aspx/GetActivityApprovalStatusList")%>  ',
+                        data: jsonText,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (msg) {
+                            if (msg.d == null) {
+
+                            }
+                            else {
+      
+                                alert(msg.d.length);
+                            }
+
+
+                        }
+                    });
+                });
+            
+        });
+    </script>--%>
+</head>
+<body onunload="bodyUnload();" onclick="clicked=true;">
+        <form id="frm" runat="server">
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background:linear-gradient(135deg, black 30%, DeepskyBlue 100%);">
+            <div class="navbar-header"  id="stext">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<%=  Application["BasePage"] %>/Dashboard.aspx" style="color: white; padding: 1px 0px;"></a>
+                <a href="https://www.evantageindia.in/" target="_blank"><img src="<%= Application["BasePage"] %>../images/Logo2.jpg" style="width: 180px; height:60px"" /></a>
+   
+                        <%--    Logout:<div id='SecondsUntilExpire'></div>--%>
+
+                                                        
+               
+   </div>
+            <!-- /.navbar-header -->
+
+           
+                 
+            <ul class="nav navbar-top-links navbar-right" >
+                 <div  id='SecondsUntilExpire'></div>
+
+                 <li style="width=180px; color:white;"><b><asp:Label ID="marqsocietyname" runat="server"></asp:Label></b></li> 
+                <!-- /.dropdown -->
+                <li class="dropdown" id="PendingWorkalert">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" style="color: #f0ad4e!important">
+                        <i class="fa fa-tasks fa-fw"><span class="numberCircleyellow"></span></i>..<i class="fa fa-caret-down"></i>    <%--<%=Pendingstatus  %>--%>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="background-color: #fcf8e3;">
+                        <asp:Repeater ID="RPTPendingWorkList" runat="server">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="<%=  Application["BasePage"] %>/Projectmgmt/AssignWorkdetails.aspx">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i><span class="small"><b>Project :</b> <%# Eval("ProjectName") %>
+                                                <br />
+                                                <b>Work Details :</b> <%# Eval("Task") %></span>
+                                            <br />
+                                            <span class="pull-right text-muted small" style="color: #a94442">Need to be finished By : <%# Eval("FinishDate") %></span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <li class="dropdown" id="useralert">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" style="color: red!important">
+                        <i class="fa fa-ban fa-fw"><span class="numberCirclered"></span></i><i class="fa fa-caret-down"></i>> <%--<%=rejectedstatus  %>--%>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="background-color: #f2dede;">
+                        <asp:Repeater ID="RPTActivityRejectList" runat="server">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="<%=  Application["BasePage"] %>/Projectmgmt/RejectedActivity.aspx?ActivityId=<%# Eval("ActivityId") %>">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i><span class="small"><b>Project :</b> <%# Eval("ProjectName") %>
+                                                <br />
+                                                <b>Activity :</b> <%# Eval("ActivityName") %></span>
+                                            <span class="pull-right text-muted small" style="color: #a94442">It is Rejected. Please check and modify.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <li class="dropdown" id="adminalert">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" style="color: #5cb85c!important">
+                        <i class="fa fa-bell fa-fw"><span class="numberCirclegreen"></span></i><i class="fa fa-caret-down"></i><%--<%= approvalstatus %>--%>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="background-color: #dff0d8">
+                        <asp:Repeater ID="RPTActivityApprovalList" runat="server">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="<%=  Application["BasePage"] %>/Projectmgmt/ApproveActivity.aspx?ActivityId=<%# Eval("ActivityId") %>">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i><span class="small"><b>Project :</b> <%# Eval("ProjectName") %>
+                                                <br />
+                                                <b>Activity :</b> <%# Eval("ActivityName") %></span>
+                                            <span class="pull-right text-muted small" style="color: #3c763d">Waiting for approval.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span style="color: white">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM3SURBVGhD7ZlZyE5bGIB/U4jMJ9MNqRPJjRtDTpLpAndHSYlMZUiUZCYlF4biQiFJGaIonZCEpCNluBHlxpDxSIaLQ5mfZ9W6wf993977Z231PfVcvKu91/fuYa39rvU11Knze9ECh+F83Iy7cAcuQ9tLTwdcj8/wSwWvYB8sJYPxPproZ7yBu3EdzsGFuB0fosf8h9twAJaG/vgaTfAMDsTGaI2nMD6dT+jFJqcZXkWTOojNsRqOIZ/EanyHnrsYkzIGTcRx0cmGjIxFz/8fu9mQCt97E9kQonycRftwLCXjJprE0BDlw2naPpymk/EcTaJLiPIxCu3jQogS8RFNwgGclxFoH5dClIi3aBKtQpSPkWgfF0OUiHtoEr1DlI+paB9HQpSIy2gSQ0KUD2c8+ygy8xVmJ5rEvBDlw0FuH+NDlIiZaBL7QpQdSxa/7k4aFp3JWIVeyK0QZScOdC+mhw2peIEmYvWbB2u1PWgfLgGSYY1kEkVei+VoH1tClAjnfpOYFKJ8nEb7mBKiRMQ66SmusSEDnfEcuhB7iXmq5ybDL3qcgrMO+DjQvQkTbCgDFo+u9rqGqDZcWHkhm0JUEg6hSS0JUXWcre6g54y2oSyYjEm5qeC7X43p6PF3sZbl8S/lJJqcOyhtbGgEx8Yb9FgLxtLRHeNmQkcbGsG6zGP+QV+xUpLlQvaGqKSYoLYN0Y+ZjR7j9lEpcblrgk7DlfAL7nFJF1KVmIEm6KqxEsPR4/wQJq14v8UZaiO+RxOchdU4jx77AJN/1XviWnyCJmXNVGu99QfGrVb9F33limxiZMZX4zDGJ6DX0e9DFlwdujCLG+DqTfHm/NRXbhy69xR/9AMeQzfYitAeF+BtjH07jbsdW2R35jv6ouV2/JFHaMHXC5uav/AAepPiBa3EllgIO3atYKfOMouwUvnRVPTD/ei487ctf9phLgZhfH+dZRygv5qJ+ArN4QRm3pq1IrX4swMfdZG93aL8iXGzfK4NWfgbPdFZxMGYmmloPo8x0009jp64NUTpcaqOpX+mhVj899Uv9uSSeA3NaQXWhLNSnC3KaM3lv9syR0vsUqxTp07NNDR8BciTJGl2qRtJAAAAAElFTkSuQmCC" style="width: 25px; color: white; background-color: white;" />
+                            <%= Session["UserName"] == null ? "Guest" : Session["UserName"] %> <i class="fa fa-caret-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw" style="font-size: 15px;"></i>User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw" style="font-size: 15px;"></i>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                
+                        <li> <asp:LinkButton ID="lnklogout" runat="server" OnClick="lnklogout_Click" ValidationGroup="false">Logout</asp:LinkButton></li>
+
+                   
+                      <%--<li><a href="<%=Application["BasePage"] %>/Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+
+          
+
+
+                        </li>--%>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+           <%-- </div>--%>
+
+
+          
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <li>
+                            <a href='<%=  Application["BasePage"] %>/Dashboard.aspx'><i class="fa fa-dashboard fa-fw" style="font-size:15px"></i>Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-bank" style="font-size:15px"></i> Master(s)<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+
+                                <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/frmMasterSocietySetup.aspx'>Society Setup<span></span></a>
+                                   
+                                </li>
+
+                                    <li>
+                                   <%-- <a href='<%=  Application["BasePage"] %>/Master/frmKYCList.aspx'>KYC Creation<span></span></a>--%>
+                                     <a href='<%=  Application["BasePage"] %>/Master/frmMasterKYC.aspx'>KYC Creation<span></span></a>
+                                    </li>
+                                    <li>
+                                   <a href='<%=  Application["BasePage"] %>/Master/frmSHGList.aspx'>SHG Creation<span></span></a>
+                                   
+                                    <!-- /.nav-third-level -->
+                                   </li>
+                                    <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmACGroupMasterList.aspx'>Group Master</a>
+                                    </li>
+                                    <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmLedgerList.aspx'>Ledger Master</a>
+                                     </li>
+                                     <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmSubledgerMaster.aspx'>Sub-Ledger Master</a>
+                                     </li>
+                                      <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmEmployeeMaster.aspx'>Employee Master</a>
+                                     </li>
+                                     <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmProjectUser.aspx'>User Master</a>
+                                     </li>
+                                   </li>
+                               </ul>
+                                <%--DROP DOWN FOR SHARE ACCOUNT OPENING--%>
+
+                                 <li>
+                                      <a href="#"><i class="fa fa-bank" style="font-size:15px"></i> Share <span class="fa arrow"></span></a>
+                                      <ul class="nav nav-third-level">
+                                      <li>
+
+                                      <li>
+                                           <a href='<%=  Application["BasePage"] %>/Transaction/frmShareAccountOpening.aspx'>Account Opening<span></span></a>
+                                   
+                                     </li>
+                                     <li>
+                                           <a href='<%=  Application["BasePage"] %>/Transaction/frmShareAccountClosing.aspx'>Account Closing<span></span></a>
+                                   
+                                     </li>
+                                     <li>
+                                         <a href='<%=  Application["BasePage"] %>/Transaction/frmDetailListShare.aspx'>Share Detail List<span></span></a>
+                                     </li>
+                                     <li>
+                                         <a href='<%=  Application["BasePage"] %>/Transaction/frmShareDividendCalculation.aspx'>Share Dividend Calculation<span></span></a>
+                                     </li>
+                                    </li>
+                                  </ul>
+                                </li>
+                               
+                                    
+                                       <%--DROP DOWN FOR DEPOSITE ---%>
+                        
+                                        <li>
+                                            <a href="#"><i class="fa fa-credit-card" style="font-size:15px"></i> Deposite<span class="fa arrow"></span></a>
+                                            <ul class="nav nav-third-level">
+
+                                               <li>
+                                                 <%--   <a href="#">Deposite<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level"> ---%>
+                                                        <li> 
+                                                            <a href='<%=  Application["BasePage"] %>/Master/frmDepositMaster.aspx'>Scheme Master</a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmAccountOpening.aspx'>Account Opening</a>
+                                                        </li>
+                                                         <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmSHGAccountOpening.aspx'>SHG Account Open</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmAccountClosing.aspx'>Account Closing</a>
+                                                        </li>
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmInvestmentAccountClosing.aspx'>Investment Account Closing</a>
+                                                        </li>
+                                                   </li>
+                                                </ul>
+                                            </li>
+                                       <%-- DROP DOWN FOR INVESTMENT--%>
+                                          <li>
+                                            <a href="#"><i class="fa fa-credit-card" style="font-size:15px"></i> Investment<span class="fa arrow"></span></a>
+                                            <ul class="nav nav-third-level">
+
+                                               <li>
+                                                 <%--   <a href="#">Deposite<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level"> ---%>
+                                                    <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmInvestmentAcOpening.aspx'>Investment Account Opening</a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmInvestmentAccountClosing.aspx'>Investment Account Closing</a>
+                                                        </li>
+                                                         <li>
+                                                        <a href='<%= Application["BasePage"] %>/Report/frmInvestmentDetailsDepositReport.aspx'>Detail List</a>
+                                                       </li>
+
+                                                   </li>
+                                                </ul>
+                                            </li>
+                                           <%--Drop Down For Trading--%>
+                                         <li>
+                                             <a href="#"><i class="fa fa-cart-plus" style="font-size:16px"></i> Trading<span class="fa arrow"></span></a>
+                                             <ul class="nav nav-second-level">
+                                                 <li>
+                                                     <li> 
+                                                            <a href='<%=  Application["BasePage"] %>/Master/FrmItemClass.aspx'>Item Class</a>
+                                                      </li>
+                                                     <li> 
+                                                            <a href='<%=  Application["BasePage"] %>/Master/FrmItemMaster.aspx'>Item Master</a>
+                                                      </li>
+                                                 </li>
+                                                 </ul>
+                                         </li>
+                                    <%--Drop Down For Loan--%>
+                                    <li>
+                                        <a href="#"><i class="fa fa-briefcase" style="font-size:15px"></i> Loan<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Master/frmLoanSchemeMaster.aspx'>Scheme Master</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Transaction/frmLoanAcOpening.aspx'>Account Opening</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Transaction/frmLoanDisbursment.aspx'>Loan Disbursment</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Transaction/frmLoanRepayment.aspx'>Loan Repayment</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Transaction/frmLoanEMI.aspx'>Loan EMI</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["Basepage"] %>/Transaction/frmLoanSecurityEntry.aspx'>Loan Security Entry</a>
+                                            </li>
+                                            
+                                         </ul>
+                                    </li>
+                               <%--Drop Down For Tools --%>
+                                   <li >
+                                       <a href="#"><i class="fa fa-wrench" style="font-size:15px"></i> Tools<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Master/FrmSearchCustomer.aspx'>Customers Search</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Master/balUpdate.aspx'>Update Balance Deposite</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Master/frmLoanUpdateBalance.aspx'>Update Loan Balance</a>
+                                            </li>
+                                            <li>
+                                                 <a href='<%= Application["BasePage"] %>/Master/frmStock_Update.aspx'>Stock Update</a>
+                                            </li>
+                                           <%-- <li>
+                                                 <a href='<%= Application["BasePage"] %>/Transaction/frmModifyTransaction.aspx'>Voucher Modification</a>
+                                            </li>--%>
+                                             <li>
+                                                 <a href='<%= Application["BasePage"] %>/Transaction/frmVoucherModification.aspx'>Voucher Modification</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["Basepage"] %>/Transaction/frmDeleteRepayment.aspx'>Loan Voucher Modification</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["Basepage"] %>/Transaction/frmBankLedgerBalanceUpdate.aspx'>Branch Ledger Balance Update</a>
+                                            </li>
+                                            <li>
+                                                <a href='<%= Application["Basepage"] %>/Transaction/frmVoucherAuthorization.aspx'>Voucher Authorization</a>
+                                            </li>
+                                            
+                                          </ul>
+                                    </li>
+                               <%--Drop Down For Handel --%>
+                                <li>
+                                     <a href="#"><i class="fa fa-wrench" style="font-size:15px"></i> Handle<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href='<%= Application["BasePage"] %>/Transaction/frmTextFileUpload.aspx'>Handle</a>
+                                            </li>
+                                       </ul>
+                               </li>
+                               <%--Droup Down For Transaction --%>
+                                  <li>
+                                      <a href="#"><i class="fa fa-calculator" style="font-size:15px"></i> Transaction<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            
+                                           <%--- <a href="#"><span class="fa arrow">Deposite</span></a>
+                                                 <ul class="nav nav-third-level"> ---%>
+                                                  <%-- <li>
+                                                     <a href="#"><i class=""></i>Deposite<span class="fa arrow"></span></a>
+                                                     <ul class="nav nav-third-level">
+                                                         <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmAccountOpening.aspx'>Deposite Account Open</a>
+                                                        </li>
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmSHGAccountOpening.aspx'>SHE Account Open</a>
+                                                        </li>
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmInvestmentAcOpening.aspx'>Investment Account Opening</a>
+                                                        </li>
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmAccountClosing.aspx'>Deposite Closing</a>
+                                                        </li>
+                                                        <li>
+                                                             <a href='<%= Application["BasePage"] %>'>Investment Closing</a>
+                                                        </li>
+                                                    </ul>
+                                                 </li>--%>
+                                           
+                                            <%--Voucher Entry DropDown--%>
+                                            <li>
+                                            <a href="#"><i class=""></i>Voucher Entry<span class="fa arrow"></span></a>
+                                             <ul class="nav nav-third-level">
+                                                    <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/Cashier_Counterbook.aspx'>Deposite Voucher</a>
+                                                    </li>
+                                                     <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmGeneralTransaction.aspx'>General Voucher</a>
+                                                    </li>
+                                                     <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmJournaltransaciton.aspx'>Journal Voucher</a>
+                                                    </li>
+                                                    <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmBatchTransaction.aspx'>Batch Voucher</a>
+                                                    </li>
+                                                     <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmMISINTDetails.aspx'>MIS Interest Details</a>
+                                                    </li>
+                                                 </ul>
+                                                </li>
+                                                   <%-- Treading Voucher DropDown ---%>
+                                            <li>
+                                                <a href="#"><i class=""></i>Treading Voucher<span class="fa arrow"></span></a>
+                                                <ul class="nav nav-third-level">
+                                                    <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmStockTransaction.aspx'>Sales & Purchase</a>
+                                                    </li>
+                                                    </ul>
+                                                </li>
+                                             <%--Saving interest calculation--%>
+                                             <li>
+                                                        <a href='<%= Application["BasePage"] %>/Transaction/frmSavingsInterestCalculation.aspx'>Saving Interest Calculation</a>
+                                                    </li>
+                                            <%--<li>
+                                                <a href="#"><i class=""></i>Saving Interest Calculation<span class="fa arow"></span></a>
+                                                <ul class="nav nav-third-level">
+                                                   
+                                                </ul>
+                                            </li>--%>
+            
+                                            
+                                        </ul>
+                                  </li>
+                               <%--Drop Down For CBS --%>
+                                  <%--<li>
+                                      <a href="#"><i class="fa fa-money" style="font-size:15px"></i> CBS<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmCBSACOpening.aspx'>Account Opening</a>
+                                                </li>
+                                                <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmInwardDetails.aspx'>Inward Transaction</a>
+                                                </li>
+                                                <li>
+                                                         <a href='<%= Application["BasePage"] %>/Transaction/frmNeftRtgs.aspx'>NEFT/RTGS</a>
+                                                </li>
+                                            </li>
+                                         </ul>
+                                  </li>--%>
+                                  <li>
+                                      <a href="#"><i class="fa fa-newspaper-o" style="font-size:15px"></i> Report<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <%-- General DropDown--%>
+                                                <li>
+                                                    <a href="#"><i class=""></i>General<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                         <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frm_DailyScroll_ASON.aspx'>Daily Scroll</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmCashBookRepost.aspx'>Cash Book</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmDayBookReport.aspx'>Day Book</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmCashAccount.aspx'>Cash Account</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmGeneralLedgerReport.aspx'>General Ledger</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmBRSReport.aspx'>BRS</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmVoucherSummary.aspx'>Voucher Summary</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>'>Sub Ledger A/C Statement</a>
+                                                        </li>
+                                                        </ul>
+                                                    </li>
+                                                <%-- Deposite DropDown--%>
+                                                <li>
+                                                    <a href="#"><i class=""></i>Deposite<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                    <li>
+                                                             <a href='<%= Application["BasePage"] %>/Report/frmAccountStatement.aspx'>Account Statement</a>
+                                                    </li>
+                                                    <li>
+                                                             <a href='<%= Application["BasePage"] %>/Transaction/frmPassBook.aspx'>Passbook Print</a>
+                                                    </li>
+                                                    <li>
+                                                             <a href='<%= Application["BasePage"] %>/Report/frmDetailsDepositReport.aspx'>Deposite Detail List</a>
+                                                    </li>
+                                                    <li>
+                                                             <a href='<%= Application["BasePage"] %>/Report/frmSubledgerDetailsReport.aspx'>Sub Ledger Details</a>
+                                                    </li>
+                                                        </ul>
+                                                    </li>
+                                                <%-- Loan Drop Down--%>
+                                                <li>
+                                                    <a href="#"><i class=""></i>Loan<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/LoanAcctDetails.aspx'>Loan Account Statement</a>
+                                                        </li>
+                                                         <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmLoanDetailList.aspx'>Loan Detail List</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmNPAFarm.aspx'>NPA Farm</a>
+                                                        </li>
+                                                         <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmNPANonFarm.aspx'>NPA Non Farm</a>
+                                                        </li>
+                                                        <%--<li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/OverdueNPAList.aspx'>Over Due NPA List</a>
+                                                        </li>--%>
+                                                         <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmLoanSecurityDetlReport.aspx'>Loan Security Details</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmLoanCollectionByScheme.aspx'>Schema Wise Loan Collection</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/LoanSchemeWisedisburse.aspx'>Schema Disburse</a>
+                                                        </li>
+                                                        </ul>
+                                                    </li>
+                                                <%-- Investment Drop Down--%>
+                                                <%--<li>
+                                                    <a href="#"><i class=""></i>Investment<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmInvestmentDetailsDepositReport.aspx'>Detail List</a>
+                                                        </li>
+                                                        </ul>
+                                                    </li>--%>
+                                                <%--- Treading ---%>
+                                                <li>
+                                                    <a href="#"><i class=""></i>Treading<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmStockDetailsReport.aspx'>Stock Details</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmDailySaleReport.aspx'>Daily Sales</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/GSTPayableReceiable.aspx'>GST Payable Reciable</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmGSTCalculation.aspx'>GST Calculation</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/StockMemoDetailsReport.aspx'>Memo Details</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmSalesJournalReport.aspx'>Stock Journal</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmItemWiseSalePurchaseReport.aspx'>Item Wise Sale Purchase</a>
+                                                        </li>
+                                                        </ul>
+                                                    </li>
+                                                <%-- MIS Drop Down--%>
+                                                <li>
+                                                    <a href="#"><i class=""></i>MIS<span class="fa arrow"></span></a>
+                                                    <ul class="nav nav-third-level">
+                                                        <li>
+                                                            <a href='<%= Application["BasePage"] %>//Report/frmFinalAccountsSettings.aspx'>Final Account Settings</a>
+                                                        </li>
+                                                         <li>
+                                                                 <a href='<%= Application["BasePage"] %>//Report/frmMisDepositReturn.aspx'>MIS Deposit Return</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>//Report/frmDepositRtn.aspx'>Deposit Return</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>//Report/frmVoterList.aspx'>Voter List</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>'>Customer KYC</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>'>NPA Synopsys</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmTrailBalance.aspx'>Trial Balance</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmTradingAcReport.aspx'>Trading A/C</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/frmProfitLossAcReport.aspx'>Profit & Loss</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>'>PL Appropiation</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>/Report/FrmBalanceSheetReport.aspx'>Balance Sheet</a>
+                                                        </li>
+                                                        <li>
+                                                                 <a href='<%= Application["BasePage"] %>'>CARR</a>
+                                                        </li>
+                                                        
+                                                        </ul>
+                                                    </li>
+                                               
+                                            </li>
+                                        </ul>
+                                  </li>
+                              <%--Drop Down For Help --%>
+                                 <li>
+                                 <a href="#"><i class="fa fa-volume-control-phone" style="font-size:15px"></i> Help<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <li>
+                                                         <a href="https://www.evantageindia.in/#contact">Help</a>
+                                                </li>
+                                            </li>
+                                        </ul>        
+                                 </li>
+                    
+
+                                
+                              <%---  <li>
+                                    <a href="#">Account Master<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        
+                                        
+
+                                    </ul>
+                                   
+                                </li>---%>
+
+                             <%---   <li>
+                                    <a href="#">Deposits & Loan<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmDepositMaster.aspx'>Deposit Master</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/frmLoanSchemeMaster.aspx'>Loan Scheme</a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+
+                                <li>
+                                    <a href="#">User Master<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                       
+
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+
+                                <li>
+                                    <a href="#">Trading<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        
+                                        
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/FrmItemClass.aspx'>Item Class</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Master/FrmItemMaster.aspx'>Item Master</a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+
+
+                                <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/balUpdate.aspx'>Update Opening Balance</a>
+                                </li>
+
+                                <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/frmLoanUpdateBalance.aspx'>Update Loan Balance</a>
+                                </li>
+                                 <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/frmStock_Update.aspx'>Stock Update</a>
+                                </li>
+
+                                
+                                <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/FrmSearchCustomer.aspx'>Search Customer</a>
+                                </li>
+                                <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/mastermodifytransaction.aspx'>Journal User Access</a>
+                                </li>
+
+                                 <li>
+                                    <a href='<%=  Application["BasePage"] %>/Master/frmDateConfiguration.aspx'>Transactional Date Setting</a>
+                                </li>
+
+
+                            </ul> ---%>
+                            <!-- /.nav-second-level -->
+                        
+                     
+                        
+                                   <%---
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmSHGAccountOpening.aspx'>SHG A/C Opening</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmInvestmentAcOpening.aspx'>Investment A/C Opening</a>
+                                        </li>
+
+                                          <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmBatchTransaction.aspx'>Batch Transaction</a>
+                                        </li>
+                                       ---%>
+                                   
+                                    <!-- /.nav-third-level -->
+                                
+                        <%---
+                                <li>
+                                    <a href="#">Loan<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmLoanAccountOpening.aspx'>Account Opening</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmLoanDisbursment.aspx'>Disbrusment</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmLoanRepayment.aspx'>Repayment</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmLoanSecurityEntry.aspx'>Loan Security Entry</a>
+                                        </li>
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmDeleteRepayment.aspx'>Delete Repayment/Disb.</a>
+                                        </li>
+                              
+
+                                    </ul>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">Trading<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                               <a href='<%=  Application["BasePage"] %>/Transaction/frmStockTransaction.aspx'>Sales & Purchase</a>
+                                        </li>
+                                   
+                          
+
+                                    </ul>
+                                </li>
+
+
+
+
+                                 <li>
+                                    <a href="#">CBS Account<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmCBSACOpening.aspx'>CBS A/C Opening</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmInwardDetails.aspx'>Inward Details</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmNeftRtgs.aspx'>NEFT/RTGS</a>
+                                        </li>
+                                </ul>
+                                    
+                                </li>
+
+                                <li>
+                                    <a href="#">General<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmGeneralTransaction.aspx'>General Transaction</a>
+                                        </li>
+                                      
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmModifyTransaction.aspx'>Modify Transaction</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Transaction/frmJournaltransaciton.aspx'>Journal Transaction</a>
+                                        </li>
+
+                                    </ul>
+                                    
+                                </li>
+
+                            ---%>
+
+
+
+                   <%---       
+                    
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Deposit<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmAccountStatement.aspx'>Account Statement</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmPassbookPrint.aspx'>Passbook Print</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmDetailsDepositReport.aspx'>Details Deposite</a>
+                                        </li>
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmSubledgerDetailsReport.aspx'>Subledger Details</a>
+                                        </li>
+
+                                       
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/RdlcClientList.aspx'>Client Details</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frm_DailyScroll_ASON.aspx'>Daily Scroll</a>
+                                        </li> 
+                                       
+
+
+
+                                    </ul>
+                                   
+                                </li>
+
+                                
+                              <li>
+                                    <a href="#">Loan<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/LoanAcctDetails.aspx'>Loan Account Statement</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmLoanDetailList.aspx'>Loan DetailList</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/OverdueNPAList.aspx'>Over Due NPA List</a>
+                                        </li>
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmLoanSecurityDetlReport.aspx'>Loan Security Details</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmLoanCollectionByScheme.aspx'>Scheme Wise Loan Collection</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/LoanSchemeWisedisburse.aspx'>Scheme Disburse</a>
+                                        </li> 
+                                       
+
+
+
+                                    </ul>
+                                    
+                                </li>
+                                
+                                  <li>
+                                    <a href="#">Trading <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmTradingAcReport.aspx'>Trading A/C</a>
+                                        </li>
+                                    </ul>
+                                      </li>
+                                 
+
+
+                                <li>
+                                    <a href="#">Final Accounts<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmFinalAccountsSettings.aspx'>Final Accounts Settings</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmProfitLossAcReport.aspx'>P&L A/C</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/FrmBalanceSheetReport.aspx'>Balance Sheet</a>
+                                        </li>
+                                       
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmTrailBalance.aspx'>Trail Balance</a>
+                                        </li>
+
+
+
+                                    </ul>
+                                    
+                                </li>
+
+                                 <li>
+                                    <a href="#">Stock Report<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmStockDetailsReport.aspx'>Stock Details</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmDailySaleReport.aspx'>Daily Sales</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/GSTPayableReceiable.aspx'>GSTPayableReceiable</a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmGSTCalculation.aspx'>GSTCalculation</a>
+                                        </li> 
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/StockMemoDetailsReport.aspx'>Memo Details</a>
+                                        </li> 
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmSalesJournalReport.aspx'>Stock Journal</a>
+                                        </li>
+
+                                          <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmItemWiseSalePurchaseReport.aspx'>Item Wise Sale Purchase</a>
+                                        </li>
+
+
+
+                                    </ul>
+                                    
+                                </li>
+
+
+
+
+
+
+                                <li>
+                                    <a href="#">General<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                      
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmDailyScroll.aspx'>Daily Scroll</a>
+                                        </li>
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmCashAccount.aspx'>Cash Book</a>
+                                        </li>
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmDayBookReport.aspx'>Day Book</a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmCashAccount.aspx'>Cash Account</a>
+                                        </li>
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmGeneralLedgerReport.aspx'>General Ledger</a>
+                                        </li>
+
+                                         <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmBRSReport.aspx'>BRS</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmVoucherSummary.aspx'>Voucher Summary </a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmInvoiceReport.aspx'>Invoice </a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmStockdetailsreport.aspx'>Stock Details List</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='<%=  Application["BasePage"] %>/Report/frmVoterList.aspx'>Voter List</a>
+                                        </li>
+
+                                     
+                                        
+
+
+                                    </ul>
+                                    
+                                </li>
+
+                                     <li>
+                                     <a href="#"> MIS<span class="fa arrow"></span></a>
+                                     
+                                   
+                                    </li>
+
+                                <li>
+                                     <a href="#">CBS<span class="fa arrow"></span></a>
+                                     
+                                    
+                                 </li>
+
+                                 <li>
+                                     <a href='https://www.evantageindia.in/#contact'>Help<span class="fa arrow"></span></a>
+                                     
+                                    
+                                 </li>---%>
+                    
+                 
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+    <footer class="sticky-footer">
+        <div class="copyright text-center my-auto">
+            <span>Copyright © 2018-2019 <strong><a href="https://evantageindia.in/">Evantageindia.in</a></strong> All rights reserved.</span>
+            <span class="my-auto1"><strong>Version</strong> 1.0</span>
+        </div>
+
+    </footer>
+
+    <%--<script type="text/javascript">
+        function Logout() {
+            <% Session.Abandon(); %>
+            return true;
+        }
+    </script>--%>
+
+    <script src='<%=  Application["BasePage"] %>/Content/DDLScript/select2.full.min.js'></script>
+                 </form>
+</body>
+               
+</html>
